@@ -4,7 +4,7 @@ import TimeSlit from "./TimeSlit";
 
 const TimeSlits = () => {
 	const [hoverIndex, setHoverIndex] = useState(null);
-	const { data: sunriseSunset, loading } = useSunriseSunset(51.5074, -0.1278);
+	const { data: sunriseSunset, loading } = useSunriseSunset();
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	const currentTime = new Date();
@@ -69,10 +69,6 @@ const TimeSlits = () => {
 			className="time-slits-container"
 			onMouseLeave={() => setHoverIndex(null)}
 		>
-			<div>
-				<p>Sunrise: {sunriseSunset.sunrise}</p>
-				<p>Sunset: {sunriseSunset.sunset}</p>
-			</div>
 			<div className="mode-identifier" onClick={toggleDarkMode}>
 				<div className="mode-identifier-title">
 					{isDarkMode ? (
