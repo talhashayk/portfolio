@@ -38,12 +38,49 @@ body.dark-mode {
 
 .mode-identifier {
   display: flex;
-  align-items: center;
-  gap: 3px;
-  padding: 1px 5px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 4px;
   border-radius: 10px;
   font-size: 12px;
   margin-left: -4px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mode-identifier:hover {
+  padding: 1px 5px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  .annotation-icon {
+    animation: spin 5s infinite linear;
+  }
+
+  .mode-identifier-text {
+    display: block;
+    transition: all 0.2s ease;
+  }
+}
+
+.mode-identifier-title {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.mode-identifier-text {
+  display: none;
+  font-size: 8px;
+  margin: 0 0 3px;
+  white-space: nowrap;
 }
 
 .time-slits-container {
@@ -66,7 +103,7 @@ body.dark-mode {
   transition: width 0.2s ease, opacity 0.2s ease;
 }
 
-.time-slit:hover {
+hover {
   opacity: 1;
 }
 
@@ -84,17 +121,17 @@ body.dark-mode {
   cursor: pointer;
 }
 
-.annotation-icon {
-  width: 12px;
-  height: 12px;
-  margin-left: -2px;
-}
-
 .time-annotation:hover {
   top: -6px;
   padding: 1px 5px;
   transition: all 0.3s ease;
   gap: 2px;
+}
+
+.annotation-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: -2px;
 }
 
 @keyframes pulse {

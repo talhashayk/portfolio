@@ -73,23 +73,30 @@ const TimeSlits = () => {
 				<p>Sunrise: {sunriseSunset.sunrise}</p>
 				<p>Sunset: {sunriseSunset.sunset}</p>
 			</div>
-			<div className="mode-identifier">
-				{isDarkMode ? (
-					<img
-						src="/moon.svg"
-						alt="Moon Icon"
-						data-tip="You're already in light mode. Click the moon icon to switch to dark mode."
-						className="annotation-icon"
-					/>
-				) : (
-					<img
-						src="/sun.svg"
-						alt="Sun Icon"
-						data-tip="You're already in light mode. Click the moon icon to switch to dark mode."
-						className="annotation-icon"
-					/>
-				)}
-				theme
+			<div className="mode-identifier" onClick={toggleDarkMode}>
+				<div className="mode-identifier-title">
+					{isDarkMode ? (
+						<img
+							src="/moon.svg"
+							alt="Moon Icon"
+							className="annotation-icon"
+						/>
+					) : (
+						<img
+							src="/sun.svg"
+							alt="Sun Icon"
+							className="annotation-icon"
+						/>
+					)}
+					theme
+				</div>
+				<p className="mode-identifier-text">
+					Select an hour with a different theme to toggle between
+					light and dark mode
+				</p>
+				<p className="mode-identifier-text">
+					(or click here for a less fun / better UX option)
+				</p>
 			</div>
 			{slits}
 		</div>

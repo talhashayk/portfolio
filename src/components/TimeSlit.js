@@ -53,7 +53,6 @@ const TimeSlit = ({
 						<img
 							src="/sun.svg"
 							alt="Sun Icon"
-							data-tip="You're already in light mode. Click the moon icon to switch to dark mode."
 							className={`annotation-icon ${
 								isDarkMode ? "annotation-icon-animation" : ""
 							}`}
@@ -62,7 +61,6 @@ const TimeSlit = ({
 						<img
 							src="/moon.svg"
 							alt="Moon Icon"
-							data-tip="You're already in light mode. Click the moon icon to switch to dark mode."
 							className={`annotation-icon ${
 								!isDarkMode ? "annotation-icon-animation" : ""
 							}`}
