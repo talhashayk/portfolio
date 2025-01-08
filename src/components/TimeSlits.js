@@ -42,7 +42,11 @@ const TimeSlits = () => {
 	}, [sunriseSunset, currentHour]);
 
 	if (loading) {
-		return <p>Loading...</p>;
+		return (
+			<div className="loader-container">
+				<span class="loader"></span>
+			</div>
+		);
 	}
 
 	if (!sunriseSunset || !sunriseSunset.sunrise || !sunriseSunset.sunset) {
@@ -84,7 +88,7 @@ const TimeSlits = () => {
 							className="annotation-icon"
 						/>
 					)}
-					theme
+					Theme
 				</div>
 				<p className="mode-identifier-text">
 					Select an hour with a different theme to toggle between
