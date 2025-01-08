@@ -7,9 +7,24 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 body.light-mode {
   color: black;
-  background-color: white;
+  background: linear-gradient(-45deg, #ffffff, #cbc0c0, #cfedff, #c5fffc);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 
   .time-annotation, .time-slit, .mode-identifier {
     background-color: black;
@@ -28,7 +43,10 @@ body.light-mode {
 
 body.dark-mode {
   color: white;
-  background-color: black;
+  background: linear-gradient(-45deg, #000000, #0f0404, #05131a, #051d1d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 
   .time-annotation, .time-slit, .mode-identifier {
     background-color: white;
@@ -162,7 +180,7 @@ body.dark-mode {
 }
 
 .time-slits-container {
-  padding: 20px 0 0 12px;
+  padding: 20px 0 0 20px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
