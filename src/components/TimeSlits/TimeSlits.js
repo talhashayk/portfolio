@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSunriseSunset } from "../hooks/useSunriseSunset";
+
+import "./TimeSlits.css";
+import { useSunriseSunset } from "../../hooks/useSunriseSunset";
 import TimeSlit from "./TimeSlit";
 
 const TimeSlits = () => {

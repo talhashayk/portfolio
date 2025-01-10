@@ -1,0 +1,39 @@
+body.light-mode {
+  .navbar-button {
+    background-color: black;
+    color: white;
+  }
+}
+  
+body.dark-mode {
+  .navbar-button {
+    background-color: white;
+    color: black;
+  }
+}
+  
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+  
+.navbar-button {
+  border: none;
+  border-radius: 10px;
+  padding: 2px 8px;
+  top: 20px;
+  position: relative;
+  opacity: 0.75;
+}
+  
+.navbar-button:hover {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  opacity: 1;
+}
+  
+.navbar-button.active {
+  border-radius: 8px;
+  opacity: 1;
+}
