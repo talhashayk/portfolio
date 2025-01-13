@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ setActiveSection, activeSection }) => {
 	const navItems = ["About", "Experience", "Play", "Contact"];
-	const [activeIndex, setActiveIndex] = useState(null);
 
-	const handleButtonClick = (index) => {
-		setActiveIndex(index);
+	const handleButtonClick = (label) => {
+		setActiveSection(label);
 	};
 
 	return (
@@ -16,9 +15,9 @@ const NavBar = () => {
 				<button
 					key={index}
 					className={`navbar-button ${
-						activeIndex === index ? "active" : ""
+						activeSection === label ? "active" : ""
 					}`}
-					onClick={() => handleButtonClick(index)}
+					onClick={() => handleButtonClick(label)}
 				>
 					{label}
 				</button>
