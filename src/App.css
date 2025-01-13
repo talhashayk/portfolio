@@ -34,3 +34,8 @@ body.dark-mode {
 	animation: gradient 15s ease infinite;
 	height: 100vh;
 }
+
+.main-content {
+	width: 60%;
+	margin: 100px auto 0;
+}

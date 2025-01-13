@@ -109,13 +109,18 @@ body.dark-mode {
 .mode-identifier-title {
   display: flex;
   align-items: center;
+  font-size: 12pt;
   gap: 3px;
+
+  .annotation-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
   
 .mode-identifier-text {
   display: none;
-  font-size: 8px;
-  margin: 0 0 3px;
+  margin: 0 0 2px;
   white-space: nowrap;
 }
   
