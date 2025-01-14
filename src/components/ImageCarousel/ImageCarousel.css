@@ -41,9 +41,8 @@ body.light-mode {
     position: relative;
   }
 
-  .close-button {
-    background: rgb(0, 0, 0);
-    color: white;
+  .modal-close-button {
+    filter: invert(0%) sepia(3%) saturate(0%) hue-rotate(241deg) brightness(98%) contrast(103%);
   }
 
   .caption {
@@ -84,10 +83,10 @@ body.dark-mode {
     position: relative;
   }
 
-  .close-button {
-    background: rgb(255, 255, 255);
-    color: black;
+  .modal-close-button {
+    filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(289deg) brightness(105%) contrast(101%);
   }
+
 
   .caption {
     box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
@@ -192,23 +191,23 @@ body.dark-mode {
   transition: background 0.2s ease;
 }
 
-.close-button {
+.modal-close-button {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2px 8px;
-  opacity: 0.75;
-  border: none;
-  border-radius: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
-  font-size: 16px;
-  z-index: 1;
+  filter: invert(98%) sepia(1%) saturate(307%) hue-rotate(212deg) brightness(118%) contrast(100%);
+  opacity: 0.75;
 }
 
-.close-button:hover {
-  opacity: 1;
-  border-radius: 8px;
+.modal-close-button:hover {
   transition: all 0.3s ease;
+  opacity: 1;
 }
 
 .image-carousel-prev,
@@ -228,7 +227,7 @@ body.dark-mode {
 .prev-caret, .next-caret {
   content: "";
   display: block;
-  width: 30px;
+  width: 25px;
   height: 25px;
   background-image: url("../../assets/caret.svg");
   background-size: contain;

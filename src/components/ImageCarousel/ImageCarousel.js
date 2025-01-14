@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./ImageCarousel.css";
 import image1 from "../../images/image1.jpg";
 import image2 from "../../images/image2.png";
@@ -91,15 +92,13 @@ const ImageCarousel = () => {
 								height: "100%",
 							}}
 						>
-							<button
-								className="close-button"
+							<div
+								className="modal-close-button"
 								onClick={(e) => {
 									e.stopPropagation();
 									setIsModalOpen(false);
 								}}
-							>
-								Close
-							</button>
+							></div>
 						</div>
 						<div className="caption-container">
 							<p className="caption">

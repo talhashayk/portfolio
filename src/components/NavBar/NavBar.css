@@ -3,12 +3,20 @@ body.light-mode {
     background-color: black;
     color: white;
   }
+
+  .navbar-icon {
+    filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(289deg) brightness(105%) contrast(101%);
+  }
 }
   
 body.dark-mode {
   .navbar-button {
     background-color: white;
     color: black;
+  }
+
+  .navbar-icon {
+    filter: invert(0%) sepia(3%) saturate(0%) hue-rotate(241deg) brightness(98%) contrast(103%);
   }
 }
   
@@ -26,6 +34,9 @@ body.dark-mode {
   top: 20px;
   position: relative;
   opacity: 0.75;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
   
 .navbar-button:hover {
@@ -37,4 +48,24 @@ body.dark-mode {
 .navbar-button.active {
   border-radius: 8px;
   opacity: 1;
+}
+
+.navbar-icon {
+  margin: 0;
+	width: 16px;
+	height: 16px;
+}
+
+.navbar-icon-play {
+	width: 17px;
+	height: 17px;
+}
+
+.navbar-icon-about {
+	margin-left: -3px;
+}
+
+.navbar-icon-experience {
+  width: 15px;
+	height: 15px;
 }
