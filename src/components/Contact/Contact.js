@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./Contact.css";
 
 const Contact = ({ setActiveSection }) => {
+	// eslint-disable-next-line no-unused-vars
 	const [selectedOption, setSelectedOption] = useState(null);
+	const [conversation, setConversation] = useState([]);
 
 	const botMessages = [
 		"Hi there! I'm Talha Bot.",
@@ -10,7 +12,6 @@ const Contact = ({ setActiveSection }) => {
 		"How may I be of service?",
 	];
 
-	// Map of user options to their respective responses
 	const userOptions = {
 		"I just wanted to say hi!": [
 			"Hi to you too!",
@@ -40,6 +41,60 @@ const Contact = ({ setActiveSection }) => {
 
 	const handleOptionClick = (option) => {
 		setSelectedOption(option);
+		setConversation((prevConversation) => [
+			...prevConversation,
+			{ sender: "user", message: option },
+			{ sender: "bot", message: userOptions[option] },
+		]);
+	};
+
+	const renderBotMessages = () => {
+		return botMessages.map((message, index) => (
+			<div className="contact-box-bot">
+				<p key={index} className="contact-box-speech">
+					{message}
+				</p>
+			</div>
+		));
+	};
+
+	const renderUserOptions = () => {
+		return Object.keys(userOptions).map((option, index) => (
+			<p
+				key={index}
+				className="contact-box-option"
+				onClick={() => handleOptionClick(option)}
+			>
+				{option}
+			</p>
+		));
+	};
+
+	const renderConversation = () => {
+		return conversation.map((message, index) => {
+			if (message.sender === "bot") {
+				return (
+					<div
+						key={index}
+						className="contact-box-bot contact-box-bot-shift"
+					>
+						{message.message.map((response, idx) => (
+							<p key={idx} className="contact-box-speech">
+								{response}
+							</p>
+						))}
+					</div>
+				);
+			} else {
+				return (
+					<div key={index} className="contact-box-user">
+						<p className="contact-box-option-selected">
+							{message.message}
+						</p>
+					</div>
+				);
+			}
+		});
 	};
 
 	return (
@@ -64,40 +119,9 @@ const Contact = ({ setActiveSection }) => {
 				></div>
 			</div>
 			<div className="contact-box-conversation">
-				<div className="contact-box-bot">
-					{botMessages.map((message, index) => (
-						<p key={index} className="contact-box-speech">
-							{message}
-						</p>
-					))}
-				</div>
-
-				<div className="contact-box-user">
-					{selectedOption ? (
-						<p className="contact-box-option-selected">
-							{selectedOption}
-						</p>
-					) : (
-						Object.keys(userOptions).map((option, index) => (
-							<p
-								key={index}
-								className="contact-box-option"
-								onClick={() => handleOptionClick(option)}
-							>
-								{option}
-							</p>
-						))
-					)}
-				</div>
-				{selectedOption && (
-					<div className="contact-box-bot contact-box-bot-shift">
-						{userOptions[selectedOption].map((response, index) => (
-							<p key={index} className="contact-box-speech">
-								{response}
-							</p>
-						))}
-					</div>
-				)}
+				{renderBotMessages()}
+				{renderConversation()}
+				<div className="contact-box-user">{renderUserOptions()}</div>
 			</div>
 		</div>
 	);
