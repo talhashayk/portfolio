@@ -22,7 +22,9 @@ function App() {
 			<div className="main-content">
 				<Headline />
 				<Bio />
-				<ImageCarousel />
+			</div>
+			<ImageCarousel />
+			<div className="main-content">
 				{activeSection === "Contact" && (
 					<Contact setActiveSection={setActiveSection} />
 				)}
