@@ -16,17 +16,17 @@ import expandIcon from "../../assets/expand.svg";
 
 const ImageCarousel = () => {
 	const images = [
-		{ image: image1, caption: "Caption for image 1" },
-		{ image: image2, caption: "Caption for image 2" },
-		{ image: image3, caption: "Caption for image 3" },
-		{ image: image4, caption: "Caption for image 4" },
-		{ image: image5, caption: "Caption for image 5" },
-		{ image: image6, caption: "Caption for image 1" },
-		{ image: image7, caption: "Caption for image 2" },
-		{ image: image8, caption: "Caption for image 3" },
-		{ image: image9, caption: "Caption for image 4" },
-		{ image: image10, caption: "Caption for image 5" },
-		{ image: image11, caption: "Caption for image 5" },
+		{ image: image1, caption: "Catching rays" },
+		{ image: image2, caption: "Prague, Christmas Markets" },
+		{ image: image3, caption: "Catch and release" },
+		{ image: image4, caption: "I'm for lunch" },
+		{ image: image5, caption: "Livingstone" },
+		{ image: image6, caption: "Chiang Mai" },
+		{ image: image7, caption: "Koh Samui, Night Markets" },
+		{ image: image8, caption: "Jellyfish Museum" },
+		{ image: image9, caption: "Bouldering" },
+		{ image: image10, caption: "The Algarve" },
+		{ image: image11, caption: "Koh Tao" },
 	];
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);

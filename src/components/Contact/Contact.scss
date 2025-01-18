@@ -40,8 +40,10 @@ body.light-mode {
     box-shadow: $box-shadow-light;
   }
 
-  .contact-box-option:hover {
-    background-color: $overlay-background-colour-light;
+  @media only screen and (min-width: 601px) {
+    .contact-box-option:hover {
+      background-color: $overlay-background-colour-dark;
+    }
   }
 
   .contact-box-option-selected {
@@ -77,8 +79,10 @@ body.dark-mode {
     box-shadow: $box-shadow-dark;
   }
 
-  .contact-box-option:hover {
-    background-color: $overlay-background-colour-dark;
+  @media only screen and (min-width: 601px) {
+    .contact-box-option:hover {
+      background-color: $overlay-background-colour-dark;
+    }
   }
 
   .contact-box-option-selected {

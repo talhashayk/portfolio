@@ -125,11 +125,10 @@ body.dark-mode {
   display: flex;
   gap: 15px;
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
-  padding: 15px 0 30px;
-  border-bottom-left-radius: 70% 500px;
-  border-bottom-right-radius: 70% 500px;
+  padding: 15px 0;
 }
 
 .image {
