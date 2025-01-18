@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./TimeSlits.css";
+import "./TimeSlits.scss";
 import { useSunriseSunset } from "../../hooks/useSunriseSunset";
 import TimeSlit from "./TimeSlit";
 

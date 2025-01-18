@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./TimeSlits.css";
+import "./TimeSlits.scss";
 
 const TimeSlit = ({
 	index,

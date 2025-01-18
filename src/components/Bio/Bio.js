@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Bio.css";
+import "./Bio.scss";
 
 const Bio = () => {
 	return (

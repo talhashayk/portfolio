@@ -1,3 +1,5 @@
+@import "../../assets/vars.scss";
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -12,75 +14,75 @@
 
 body.light-mode {
   .contact-box {
-    background: linear-gradient(-45deg, #ffffff, #cbc0c0, #cfedff, #c5fffc);
+    background: $background-gradient-animation-light;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow-light;
   }
 
   .contact-box-header {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: $overlay-background-colour-light;
   }
 
   .contact-box-photo-wrapper {
-    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow-light;
   }
 
   .contact-box-close {
-    filter: invert(0%) sepia(3%) saturate(0%) hue-rotate(241deg) brightness(98%) contrast(103%);
+    filter: $filter-svg-light;
   }
 
   .contact-box-speech {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: $overlay-background-colour-light;
   }
 
   .contact-box-option {
-    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow-light;
   }
 
   .contact-box-option:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: $overlay-background-colour-light;
   }
 
   .contact-box-option-selected {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: $overlay-background-colour-light;
   }
 }
   
 body.dark-mode {
   .contact-box {
-    background: linear-gradient(-45deg, #000000, #0d040f, #05131a, #051d1d);
+    background: $background-gradient-animation-dark;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow-dark;
   }
 
   .contact-box-header {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $overlay-background-colour-dark;
   }
 
   .contact-box-photo-wrapper {
-    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow-dark;
   }
 
   .contact-box-close {
-    filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(289deg) brightness(105%) contrast(101%);
+    filter: $filter-svg-dark;
   }
 
   .contact-box-speech {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $overlay-background-colour-dark;
   }
 
   .contact-box-option {
-    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow-dark;
   }
 
   .contact-box-option:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $overlay-background-colour-dark;
   }
 
   .contact-box-option-selected {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: $overlay-background-colour-dark;
   }
 }
 
@@ -188,6 +190,7 @@ body.dark-mode {
   margin: 0;
   padding: 10px;
   border-radius: 10px;
+  transition: background 0.3s ease;
 }
 
 .contact-box-bot-shift {

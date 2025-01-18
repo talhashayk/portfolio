@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css";
+import "./Contact.scss";
 
 const Contact = ({ setActiveSection }) => {
 	// eslint-disable-next-line no-unused-vars
@@ -15,24 +15,24 @@ const Contact = ({ setActiveSection }) => {
 	const userOptions = {
 		"I just wanted to say hi!": [
 			"Hi to you too!",
-			"Hope you're enjoying your browsing",
-			"Thanks for visiting",
+			"I Hope you enjoy browsing",
+			"Thanks for visiting!",
 			"Anything else I can help with?",
 		],
 		"Can I see your GitHub?": [
-			"Here's my GitHub: github.com/talha-dev",
+			`Here's my GitHub: github.com/talhashayk`,
 			"Feel free to browse my repositories!",
 			"Let me know if you need anything from there.",
 			"Happy coding!",
 		],
 		"Where can I contact you?": [
-			"You can contact me through my email: talha@example.com",
+			"You can contact me through my email: talhashake@gmail.com",
 			"Feel free to reach out on LinkedIn as well!",
 			"Looking forward to hearing from you!",
 			"I respond within 24 hours.",
 		],
 		"I'd like to hire you.": [
-			"That's awesome! You can email me at talha@example.com",
+			"That's awesome! You can email me at talhashake@gmail.com",
 			"I would love to hear about the project.",
 			"Feel free to share the details anytime.",
 			"Looking forward to working together!",

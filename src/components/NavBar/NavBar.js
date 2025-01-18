@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./NavBar.css";
+import "./NavBar.scss";
 
 const NavBar = ({ setActiveSection, activeSection }) => {
 	const navItems = [

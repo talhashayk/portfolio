@@ -1,3 +1,5 @@
+@import "assets/vars.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -20,18 +22,20 @@ body {
 }
 
 body.light-mode {
-  color: black;
-  background: linear-gradient(-45deg, #ffffff, #cbc0c0, #cfedff, #c5fffc);
+  color: $base-text-colour-light;
+  background: $background-gradient-animation-light;
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-	height: 100vh;
 }
 
 body.dark-mode {
-  color: white;
-  background: linear-gradient(-45deg, #000000, #0d040f, #05131a, #051d1d);
+  color: $base-text-colour-dark;
+  background: $background-gradient-animation-dark;
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
+}
+
+body {
 	height: 100vh;
 }
 

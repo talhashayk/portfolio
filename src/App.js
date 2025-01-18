@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./App.css";
+import "./App.scss";
 
 import TimeSlits from "./components/TimeSlits/TimeSlits";
 import NavBar from "./components/NavBar/NavBar";
