@@ -28,7 +28,7 @@ body.light-mode {
   }
 
   .image-carousel {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), $overlay-background-colour-light, rgba(0, 0, 0, 0));
   }
 
   .image-carousel-next::after, .image-carousel-prev::before, .prev-caret, .next-caret {
@@ -44,7 +44,7 @@ body.light-mode {
   }
 
   .modal-content {
-    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: $box-shadow-light;
     background: $background-gradient-animation-light;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -78,7 +78,7 @@ body.dark-mode {
   }
 
   .image-carousel {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), $overlay-background-colour-dark, rgba(255, 255, 255, 0));
   }
 
   .image-carousel-next::after, .image-carousel-prev::before, .prev-caret, .next-caret {
@@ -90,7 +90,7 @@ body.dark-mode {
   }
 
   .modal-content {
-    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow-dark;
     background: $background-gradient-animation-dark;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;

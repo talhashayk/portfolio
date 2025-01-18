@@ -1,18 +1,5 @@
 @import "../../assets/vars.scss";
 
-body.light-mode {
-  .title-backing, .subtitle-backing {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(0, 0, 0));
-    color: white;
-  }
-}
-  
-body.dark-mode {
-  .title-backing, .subtitle-backing {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(255, 255, 255));
-  }
-}
-
 .headline:hover {
   .title, .subtitle {
     opacity: 1;

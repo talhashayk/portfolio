@@ -2,23 +2,23 @@
 
 body.light-mode {
   .navbar-button {
-    background-color: black;
-    color: white;
+    background-color: $base-background-colour-light;
+    color: $secondary-text-colour-light;
   }
 
   .navbar-icon {
-    filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(289deg) brightness(105%) contrast(101%);
+    filter: $filter-svg-dark;
   }
 }
   
 body.dark-mode {
   .navbar-button {
-    background-color: white;
-    color: black;
+    background-color: $base-background-colour-dark;
+    color: $secondary-text-colour-dark;
   }
 
   .navbar-icon {
-    filter: invert(0%) sepia(3%) saturate(0%) hue-rotate(241deg) brightness(98%) contrast(103%);
+    filter: $filter-svg-light;
   }
 }
   

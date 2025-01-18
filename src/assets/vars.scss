@@ -4,11 +4,20 @@ $background-gradient-animation-dark: linear-gradient(-45deg, #000000, #0d040f, #
 $base-text-colour-light: #000;
 $base-text-colour-dark: #FFF;
 
+$secondary-text-colour-light: #FFF;
+$secondary-text-colour-dark: #000;
+
+$base-background-colour-light: #000;
+$base-background-colour-dark: #FFF;
+
+$secondary-background-colour-light: #FFF;
+$secondary-background-colour-dark: #000;
+
 $overlay-background-colour-light: rgba(0, 0, 0, 0.1);
 $overlay-background-colour-dark: rgba(255, 255, 255, 0.1);
 
-$box-shadow-light: 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
-$box-shadow-dark: 0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+$box-shadow-light: 0px 0px 0px 3px $overlay-background-colour-light;
+$box-shadow-dark: 0px 0px 0px 3px $overlay-background-colour-dark;
 
 $filter-svg-light: invert(0%) sepia(3%) saturate(0%) hue-rotate(241deg) brightness(98%) contrast(103%);
 $filter-svg-dark: invert(100%) sepia(79%) saturate(0%) hue-rotate(289deg) brightness(105%) contrast(101%);
