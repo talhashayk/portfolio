@@ -49,6 +49,19 @@ body.light-mode {
   .contact-box-option-selected {
     background-color: $overlay-background-colour-light;
   }
+  
+  .response-link {
+    color: $secondary-text-colour-light;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .response-link:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .response-icon {
+    filter: $filter-svg-dark;
+  }
 }
   
 body.dark-mode {
@@ -87,6 +100,19 @@ body.dark-mode {
 
   .contact-box-option-selected {
     background-color: $overlay-background-colour-dark;
+  }
+  
+  .response-link {
+    color: $secondary-text-colour-dark;
+    background-color: rgba(255, 255, 255, 0.75);;
+  }
+  
+  .response-link:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .response-icon {
+    filter: $filter-svg-light;
   }
 }
 
@@ -211,4 +237,23 @@ body.dark-mode {
     width: calc(100% - 10px);
     height: calc(100% - 80px);
   }
+}
+
+.response-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 10px;
+  margin: -10px;
+  border-radius: 10px;
+}
+
+.response-link:hover {
+  transition: all 0.2s ease;
+}
+
+.response-icon {
+  height: 17px;
+  width: 17px;
 }
