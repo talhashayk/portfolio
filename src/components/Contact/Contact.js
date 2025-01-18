@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Contact.scss";
 import githubIcon from "../../assets/github.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import mailIcon from "../../assets/mail.svg";
 
 const Contact = ({ setActiveSection }) => {
-	// eslint-disable-next-line no-unused-vars
-	const [selectedOption, setSelectedOption] = useState(null);
 	const [conversation, setConversation] = useState([]);
 
 	const botMessages = [
@@ -15,7 +13,7 @@ const Contact = ({ setActiveSection }) => {
 		"How may I be of service?",
 	];
 
-	const userOptions = {
+	const [userOptions, setUserOptions] = useState({
 		"I just wanted to say hi!": [
 			"Hi to you too!",
 			"I hope you enjoy browsing.",
@@ -77,23 +75,34 @@ const Contact = ({ setActiveSection }) => {
 			"Feel free to share the details anytime.",
 			"Looking forward to working together!",
 		],
-	};
+	});
 
 	const handleOptionClick = (option) => {
-		setSelectedOption(option);
 		setConversation((prevConversation) => [
 			...prevConversation,
 			{ sender: "user", message: option },
 			{ sender: "bot", message: userOptions[option] },
 		]);
+
+		setUserOptions((prevOptions) => {
+			const newOptions = { ...prevOptions };
+			delete newOptions[option];
+			return newOptions;
+		});
 	};
+
+	const endOfConversationRef = useRef(null);
+
+	useEffect(() => {
+		if (endOfConversationRef.current) {
+			endOfConversationRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [conversation]);
 
 	const renderBotMessages = () => {
 		return botMessages.map((message, index) => (
-			<div className="contact-box-bot">
-				<p key={index} className="contact-box-speech">
-					{message}
-				</p>
+			<div className="contact-box-bot" key={index}>
+				<p className="contact-box-speech">{message}</p>
 			</div>
 		));
 	};
@@ -162,6 +171,7 @@ const Contact = ({ setActiveSection }) => {
 				{renderBotMessages()}
 				{renderConversation()}
 				<div className="contact-box-user">{renderUserOptions()}</div>
+				<div ref={endOfConversationRef} />
 			</div>
 		</div>
 	);
