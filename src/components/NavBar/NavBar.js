@@ -31,7 +31,7 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 						alt={`${item.label} icon`}
 						className={`navbar-icon navbar-icon-${item.label.toLowerCase()}`}
 					/>
-					<span>{item.label}</span>
+					<span className="hide-from-mobile">{item.label}</span>
 				</button>
 			))}
 		</nav>

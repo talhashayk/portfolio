@@ -71,3 +71,18 @@ body.dark-mode {
   width: 15px;
 	height: 15px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .hide-from-mobile {
+    display: none;
+  }
+
+  .navbar-button {
+    padding: 3px 5px;
+  }
+
+  .navbar-icon-about {
+    margin: 0px;
+  }
+}

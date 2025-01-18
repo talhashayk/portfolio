@@ -90,7 +90,7 @@ const TimeSlits = () => {
 							className="annotation-icon"
 						/>
 					)}
-					Theme
+					<p className="theme-identifier-text">Theme</p>
 				</div>
 				<p className="mode-identifier-text">
 					Select an hour with a different theme to toggle between

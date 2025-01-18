@@ -196,3 +196,15 @@ body.dark-mode {
 .contact-box-bot-shift {
   margin-top: 80px
 }
+
+@media only screen and (max-width: 600px) {
+  .contact-box {
+    top: 70px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    position: fixed;
+    width: calc(100% - 10px);
+    height: calc(100% - 80px);
+  }
+}

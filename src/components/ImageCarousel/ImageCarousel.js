@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 
 import "./ImageCarousel.scss";
-import image1 from "../../images/image1.jpg";
+import image1 from "../../images/image1.png";
 import image2 from "../../images/image2.png";
-import image3 from "../../images/image3.jpeg";
-import image4 from "../../images/image4.jpg";
-import image5 from "../../images/image5.jpeg";
+import image3 from "../../images/image3.png";
+import image4 from "../../images/image4.png";
+import image5 from "../../images/image5.png";
+import image6 from "../../images/image6.png";
+import image7 from "../../images/image7.png";
+import image8 from "../../images/image8.png";
+import image9 from "../../images/image9.png";
+import image10 from "../../images/image10.png";
+import image11 from "../../images/image11.png";
 import expandIcon from "../../assets/expand.svg";
 
 const ImageCarousel = () => {
@@ -15,6 +21,12 @@ const ImageCarousel = () => {
 		{ image: image3, caption: "Caption for image 3" },
 		{ image: image4, caption: "Caption for image 4" },
 		{ image: image5, caption: "Caption for image 5" },
+		{ image: image6, caption: "Caption for image 1" },
+		{ image: image7, caption: "Caption for image 2" },
+		{ image: image8, caption: "Caption for image 3" },
+		{ image: image9, caption: "Caption for image 4" },
+		{ image: image10, caption: "Caption for image 5" },
+		{ image: image11, caption: "Caption for image 5" },
 	];
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,8 +48,12 @@ const ImageCarousel = () => {
 		}
 	};
 
+	const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
 	const renderImages = () => {
-		const positions = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
+		const positions = isMobile
+			? [-1, 0, 1]
+			: [-4, -3, -2, -1, 0, 1, 2, 3, 4];
 
 		return positions.map((offset) => {
 			const { size, opacity } = calculateStyles(offset);
@@ -77,7 +93,7 @@ const ImageCarousel = () => {
 		const baseSize = 300;
 		const sizeReduction = 55;
 		const baseOpacity = 1;
-		const opacityReduction = 0.15;
+		const opacityReduction = isMobile ? 0.5 : 0.15;
 
 		const calculatedSize = Math.max(
 			baseSize - Math.abs(offset) * sizeReduction

@@ -93,21 +93,6 @@ body.dark-mode {
   }
 }
   
-.mode-identifier:hover {
-  padding: 1px 5px;
-  border-radius: 5px;
-  transition: all 0.2s ease;
-
-  .annotation-icon {
-    animation: spin 5s infinite linear;
-  }
-  
-  .mode-identifier-text {
-    display: block;
-    transition: all 0.2s ease;
-  }
-}
-  
 .mode-identifier-title {
   display: flex;
   align-items: center;
@@ -195,4 +180,49 @@ body.dark-mode {
   
 .annotation-icon-animation {
   animation: pulse 1s infinite;
+}
+
+@media only screen and (min-width: 601px) {
+  .mode-identifier:hover {
+    padding: 1px 5px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+  
+    .annotation-icon {
+      animation: spin 5s infinite linear;
+    }
+    
+    .mode-identifier-text {
+      display: block;
+      transition: all 0.2s ease;
+    }
+  }
+
+  .theme-identifier-text{
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mode-identifier:hover {
+    .mode-identifier-text {
+      display: none;
+    }
+  }
+
+  .annotation-icon {
+    margin: 0;
+  }
+
+  .mode-identifier {
+    padding: 3px 5px;
+  }
+
+  .theme-identifier-text{
+    display: none;
+  }
+
+  .time-slit-container{
+    display: none;
+  }
 }

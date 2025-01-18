@@ -14,6 +14,7 @@
   align-items: flex-start;
   text-align: left;
   width: fit-content;
+  margin: 0 -40px;
 }
   
 .title {
@@ -30,4 +31,15 @@
   font-size: 2.5rem;
   margin: -20px 0 0 -20px;
   opacity: 0.95;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
 }

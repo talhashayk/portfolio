@@ -43,3 +43,9 @@ body {
 	width: 60%;
 	margin: 100px auto 0;
 }
+
+@media only screen and (max-width: 600px) {
+	.main-content {
+		margin: 60px auto 0;
+	}
+}
