@@ -1,5 +1,17 @@
 @import "../../assets/vars.scss";
 
+// Keyframe for the slide-in effect
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px); /* Start from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
 body.light-mode {
   .bio-text {
     background-color: $overlay-background-colour-light;
@@ -13,15 +25,24 @@ body.dark-mode {
 }
 
 .bio-group {
+  animation: slideIn 1s 1.5s forwards; 
   display: flex;
   margin: 20px 0;
   gap: 30px;
+  opacity: 0;
+  transform: translateX(50px); 
+}
+
+.bio-group.loaded {
+  animation: slideIn 1s forwards;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .bio-text {
-	padding: 15px;
-	border-radius: 15px;
-} 
+  padding: 15px;
+  border-radius: 15px;
+}
 
 @media only screen and (max-width: 600px) {
   .bio-group {
