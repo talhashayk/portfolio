@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./TimeSlits.scss";
+import moonIcon from "../../assets/moon.svg";
+import sunIcon from "../../assets/sun.svg";
 
 const TimeSlit = ({
 	index,
@@ -53,7 +55,7 @@ const TimeSlit = ({
 				<div className="time-annotation" onClick={handleClick}>
 					{index >= sunrise && index < sunset ? (
 						<img
-							src="/sun.svg"
+							src={sunIcon}
 							alt="Sun Icon"
 							className={`annotation-icon ${
 								isDarkMode ? "annotation-icon-animation" : ""
@@ -61,7 +63,7 @@ const TimeSlit = ({
 						/>
 					) : (
 						<img
-							src="/moon.svg"
+							src={moonIcon}
 							alt="Moon Icon"
 							className={`annotation-icon ${
 								!isDarkMode ? "annotation-icon-animation" : ""

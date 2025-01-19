@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import "./TimeSlits.scss";
+import moonIcon from "../../assets/moon.svg";
+import sunIcon from "../../assets/sun.svg";
 import { useSunriseSunset } from "../../hooks/useSunriseSunset";
 import TimeSlit from "./TimeSlit";
 
@@ -79,13 +81,13 @@ const TimeSlits = () => {
 				<div className="mode-identifier-title">
 					{isDarkMode ? (
 						<img
-							src="/moon.svg"
+							src={moonIcon}
 							alt="Moon Icon"
 							className="annotation-icon"
 						/>
 					) : (
 						<img
-							src="/sun.svg"
+							src={sunIcon}
 							alt="Sun Icon"
 							className="annotation-icon"
 						/>
