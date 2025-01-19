@@ -181,7 +181,7 @@ body.dark-mode {
 
 .modal-content {
   position: relative;
-  width: 60%;
+  width: 40%;
   height: 60%;
   padding: 10px;
   border-radius: 10px;
@@ -198,8 +198,8 @@ body.dark-mode {
 
 .modal-close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   width: 25px;
   height: 25px;
   background-image: url("../../assets/close.svg");
@@ -273,5 +273,15 @@ body.dark-mode {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding: 15px 0 15px;
+  }
+
+  .modal-content {
+    height: 50%;
+    width: 90%;
+  }
+
+  .modal-image {
+    width: 80% !important;
+    margin: auto;
   }
 }

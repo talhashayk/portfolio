@@ -136,15 +136,14 @@ const ImageCarousel = () => {
 								width: "100%",
 								height: "100%",
 							}}
-						>
-							<div
-								className="modal-close-button"
-								onClick={(e) => {
-									e.stopPropagation();
-									setIsModalOpen(false);
-								}}
-							></div>
-						</div>
+						></div>
+						<div
+							className="modal-close-button"
+							onClick={(e) => {
+								e.stopPropagation();
+								setIsModalOpen(false);
+							}}
+						></div>
 						<div className="caption-container">
 							<p className="caption">
 								{images[currentImageIndex].caption}
