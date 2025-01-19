@@ -121,6 +121,15 @@ body.dark-mode {
   }
 }
 
+@keyframes appearCarousel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .image-carousel {
   display: flex;
   gap: 15px;
@@ -129,6 +138,8 @@ body.dark-mode {
   position: relative;
   width: 100%;
   padding: 15px 0;
+  opacity: 0;
+  animation: appearCarousel 2s 1.5s forwards;
 }
 
 .image {

@@ -8,6 +8,7 @@ import Headline from "./components/Headline/Headline";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import Bio from "./components/Bio/Bio";
 import Contact from "./components/Contact/Contact";
+import Projects from "./components/Projects/Projects";
 
 function App() {
 	const [activeSection, setActiveSection] = useState(null);
@@ -29,6 +30,7 @@ function App() {
 					<Contact setActiveSection={setActiveSection} />
 				)}
 			</div>
+			<Projects />
 		</div>
 	);
 }

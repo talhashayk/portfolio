@@ -1,0 +1,127 @@
+body.light-mode {
+  .project {
+    background: rgb(0, 0, 0, 0.1);
+  }
+
+  .project:hover {
+    background: rgb(0, 0, 0, 0.2);
+  }
+
+  .selected-project {
+    background: rgb(0, 0, 0, 0.3);
+  }
+
+  .skill {
+    background-color: rgb(0, 0, 0, 0.1);
+  }
+
+  .active-project {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+body.dark-mode {
+  .project {
+    background: rgb(255, 255, 255, 0.1);
+  }
+
+  .project:hover {
+    background: rgb(255, 255, 255, 0.2);
+  }
+
+  .selected-project {
+    background: rgb(255, 255, 255, 0.3);
+  }
+
+  .skill {
+    background-color: rgb(255, 255, 255, 0.1);
+  }
+
+  .active-project {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.projects-section {
+  padding-bottom: 500px;
+  width: 80%;
+  margin: auto;
+  margin-top: -50px;
+}
+
+.projects-title {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+.projects-container {
+  display: flex;
+  gap: 10px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.project {
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 24%;
+}
+
+.project-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skills {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 0;
+}
+
+.skill {
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+@keyframes slideInActiveProject {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.active-project {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 45%;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 15px;
+  opacity: 0;
+  animation: slideInActiveProject 1s forwards;
+}
+

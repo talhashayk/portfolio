@@ -5,15 +5,25 @@ import "./NavBar.scss";
 const NavBar = ({ setActiveSection, activeSection }) => {
 	const navItems = [
 		{ label: "About", icon: "profile.svg" },
-		{ label: "Experience", icon: "hammer.svg" },
+		{ label: "Projects", icon: "hammer.svg" },
 		{ label: "Play", icon: "game.svg" },
 		{ label: "Contact", icon: "contact.svg" },
 	];
 
+	const scrollToSection = (id) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
+	};
+
 	const handleButtonClick = (label) => {
-		activeSection !== label
-			? setActiveSection(label)
-			: setActiveSection(null);
+		if (activeSection !== label) {
+			setActiveSection(label);
+			scrollToSection(label);
+		} else {
+			setActiveSection(null);
+		}
 	};
 
 	return (
