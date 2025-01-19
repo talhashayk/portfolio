@@ -24,6 +24,12 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 					className={`navbar-button ${
 						activeSection === item.label ? "active" : ""
 					}`}
+					style={{
+						position: `${
+							item.label === "Contact" ? "absolute" : "relative"
+						}`,
+						right: `${item.label === "Contact" ? "20px" : "0"}`,
+					}}
 					onClick={() => handleButtonClick(item.label)}
 				>
 					<img
