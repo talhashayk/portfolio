@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Projects.scss";
 import { projectData } from "./projectData.js";
+
 const Projects = () => {
 	const [activeProject, setActiveProject] = useState(null);
 
@@ -17,17 +18,22 @@ const Projects = () => {
 						<div
 							key={index}
 							className={`project ${
-								activeProject === index ? "active" : ""
+								activeProject === index
+									? "selected-project"
+									: ""
 							}`}
 							onClick={() => handleProjectClick(index)}
 						>
 							<h3 className="project-title">{project.title}</h3>
 							<div className="skills">
-								{project.skills.map((skill, idx) => (
-									<p key={idx} className="skill">
-										{skill}
-									</p>
-								))}
+								{project.skills
+									.slice(0, 2)
+									.map((skill, idx) => (
+										<p key={idx} className="skill">
+											{skill}
+										</p>
+									))}
+								<p className="skill more-skills">+</p>
 							</div>
 						</div>
 					))}
