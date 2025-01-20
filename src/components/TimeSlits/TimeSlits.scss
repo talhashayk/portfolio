@@ -24,7 +24,6 @@ body.dark-mode {
 
 }
 
-
 .loader-container{
   position: fixed;
   display: flex;
@@ -185,8 +184,8 @@ body.dark-mode {
 
 @media only screen and (min-width: 601px) {
   .mode-identifier:hover {
-    padding: 1px 5px;
-    border-radius: 5px;
+    padding: 1px 10px 1px 5px;
+    border-radius: 5px 40px 40px 5px;
     transition: all 0.2s ease;
   
     .annotation-icon {
@@ -205,6 +204,11 @@ body.dark-mode {
 }
 
 @media only screen and (max-width: 600px) {
+  .loader {
+    width: 20px;
+    height: 20px;
+  }
+
   .mode-identifier:hover {
     .mode-identifier-text {
       display: none;

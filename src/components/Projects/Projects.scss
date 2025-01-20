@@ -1,3 +1,5 @@
+@import "../../assets/vars.scss";
+
 body.light-mode {
   .project {
     background: rgb(0, 0, 0, 0.05);
@@ -16,8 +18,11 @@ body.light-mode {
   }
 
   .more-skills {
-    background-color: rgb(255, 255, 255, 0.1);
-    border: 1px solid rgb(0, 0, 0, 0.2);
+    border: 2px solid rgb(0, 0, 0, 0.2);
+  }
+
+  .more {
+    filter: $filter-svg-light;
   }
 
   .active-project {
@@ -43,8 +48,11 @@ body.dark-mode {
   }
 
   .more-skills {
-    background-color: rgb(0, 0, 0, 0.1);
-    border: 1px solid rgb(255, 255, 255, 0.2)
+    border: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .more {
+    filter: $filter-svg-dark;
   }
 
   .active-project {
@@ -52,11 +60,22 @@ body.dark-mode {
   }
 }
 
+@keyframes appearProjects {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .projects-section {
-  padding-bottom: 500px;
+  padding-bottom: 50px;
   width: 80%;
   margin: auto;
   margin-top: -50px;
+  opacity: 0;
+  animation: appearProjects 2s 1.5s forwards;
 }
 
 .projects-title {
@@ -66,6 +85,11 @@ body.dark-mode {
   margin: 0;
   margin-bottom: 10px;
   opacity: 0.95;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+  }
 }
 
 .projects-container {
@@ -76,11 +100,16 @@ body.dark-mode {
 .projects {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
   padding-bottom: 10px;
   width: 100%;
   height: fit-content;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: space-around;
+  }
 }
 
 .project {
@@ -89,15 +118,39 @@ body.dark-mode {
   cursor: pointer;
   transition: all 0.3s ease;
   width: 24%;
+
+  @media only screen and (max-width: 600px) {
+    width: 48%;
+  }
+}
+
+.active-project .project-title {
+  font-size: 1.2rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
 }
 
 .project-title {
   margin: 0;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+.project-description {
+  font-size: 16px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
 }
 
 .skills {
@@ -110,12 +163,56 @@ body.dark-mode {
 
 .active-project .skills {
   font-size: 12px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 10px;
+  }
 }
 
 .skill {
   margin: 0;
   padding: 4px 8px;
   border-radius: 10px;
+}
+
+.more {
+  height: 24px;
+  width: 24px;
+  border-radius: 10px;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.active-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 15px;
+  opacity: 0;
+  animation: slideInActiveProject 1s forwards;
+
+  @media only screen and (min-width: 601px) {
+    flex: 0 0 45%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+
+    .project {
+      display: none;
+    }
+  }
+}
+
+.hide-projects {
+  display: none;
+
+  @media only screen and (min-width: 601px) {
+    display: flex;
+  }
 }
 
 @keyframes slideInActiveProject {
@@ -129,14 +226,25 @@ body.dark-mode {
   }
 }
 
-.active-project {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 45%;
-  justify-content: space-between;
-  padding: 20px;
-  border-radius: 15px;
-  opacity: 0;
-  animation: slideInActiveProject 1s forwards;
-}
+.back-button {
+  margin-top: 15px;
+  padding: 4px 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
 
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media only screen and (max-width: 600px) {
+    float: right;
+  }
+}

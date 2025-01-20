@@ -44,7 +44,7 @@ export const projectData = [
 		description:
 			"Contributed to migrating Preloved services from CentOS 7 to Rocky9 VMs, maintaining application stability throughout. Assisted in transitioning deployment pipelines from GoCD to Jenkins due to CICD incompatibility with Rocky9, ensuring a seamless migration and uninterrupted functionality.",
 		skills: [
-			"Linux Systems (CentOS, Rocky Linux)",
+			"Linux Systems",
 			"VM Management",
 			"Pipeline Migration (GoCD to Jenkins)",
 			"Application Deployment",
@@ -127,11 +127,11 @@ export const projectData = [
 		description:
 			"Developed the ‘Boost’ membership tier for Preloved from the ground up, using a ColdFusion backend. Designed and implemented the frontend for three components with ColdFusion, React, and Handlebars, and updated the database to support and monitor the new membership. Additionally, implemented tracking for conversions and user engagement by creating custom tags in Google Tag Manager and integrating them with Google Analytics.",
 		skills: [
-			"Membership Tier Development",
 			"Frontend Development",
-			"Database Management",
 			"Google Tag Manager",
 			"Google Analytics",
+			"Database Management",
+			"Membership Tier Development",
 			"Conversion Tracking",
 		],
 	},
