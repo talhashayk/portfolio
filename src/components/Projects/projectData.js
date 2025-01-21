@@ -13,6 +13,7 @@ export const projectData = [
 			"Codebase Modernization",
 			"Team Leadership",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "SendGrid Email Automation",
@@ -26,6 +27,7 @@ export const projectData = [
 			"Email Automation",
 			"Workflow Optimization",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Ezoic Ads Proxy Setup",
@@ -38,6 +40,7 @@ export const projectData = [
 			"Third-Party Proxy Configuration",
 			"Revenue Maximization",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "CentOS7 to Rocky9 Migration",
@@ -50,6 +53,7 @@ export const projectData = [
 			"Application Deployment",
 			"System Compatibility Testing",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Predictive Search Optimisation",
@@ -62,6 +66,7 @@ export const projectData = [
 			"Data Aggregation",
 			"User Engagement Metrics",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "GitLab to GitHub Migration",
@@ -74,6 +79,7 @@ export const projectData = [
 			"CI/CD Compatibility",
 			"Version Control",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Display Ad Development",
@@ -87,6 +93,7 @@ export const projectData = [
 			"Anchor Ad Integration",
 			"Frontend Development",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Archived Ads Resolution",
@@ -99,6 +106,7 @@ export const projectData = [
 			"Issue Debugging",
 			"Customer Experience Improvement",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Line Management and Mentorship",
@@ -110,6 +118,7 @@ export const projectData = [
 			"Performance Management",
 			"Domain Knowledge Sharing",
 		],
+		role: "Software Engineer, The Hut Group",
 	},
 	{
 		title: "Yoti ID Verification",
@@ -121,6 +130,7 @@ export const projectData = [
 			"Workflow Optimization",
 			"Platform Security Enhancements",
 		],
+		role: "Graduate Software Engineer, The Hut Group",
 	},
 	{
 		title: "Boost Membership Launch",
@@ -134,6 +144,7 @@ export const projectData = [
 			"Membership Tier Development",
 			"Conversion Tracking",
 		],
+		role: "Graduate Software Engineer, The Hut Group",
 	},
 	{
 		title: "Dealer Lookup Integration",
@@ -146,6 +157,7 @@ export const projectData = [
 			"Internationalization",
 			"Multi-Team Collaboration",
 		],
+		role: "Graduate Software Engineer, The Hut Group",
 	},
 	{
 		title: "Documentation Enhancement",
@@ -158,5 +170,6 @@ export const projectData = [
 			"Process Documentation",
 			"Collaboration",
 		],
+		role: "Graduate Software Engineer, The Hut Group",
 	},
 ];

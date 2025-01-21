@@ -78,6 +78,9 @@ const Projects = () => {
 							</p>
 						</div>
 						<div>
+							<p className="project-role">
+								{projectData[activeProject].role}
+							</p>
 							<div className="skills">
 								{projectData[activeProject].skills.map(
 									(skill) => (
