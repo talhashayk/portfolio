@@ -12,12 +12,10 @@ const ImageCarousel = () => {
 	const getIndex = (offset) =>
 		(currentImageIndex + offset + images.length) % images.length;
 
-	const handleImageClick = (direction) => {
-		setCurrentImageIndex(getIndex(direction));
-	};
-
-	const openModal = () => {
-		setIsModalOpen(true);
+	const openModal = (index) => {
+		if (index === currentImageIndex) {
+			setIsModalOpen(true);
+		}
 	};
 
 	const closeModal = (e) => {
@@ -49,11 +47,13 @@ const ImageCarousel = () => {
 						width: size,
 						opacity: opacity,
 					}}
-					onClick={() =>
-						offset === 0
-							? openModal()
-							: handleImageClick(offset > 0 ? 1 : -1)
-					}
+					onClick={() => {
+						if (offset === 0) {
+							openModal(getIndex(offset));
+						} else {
+							setCurrentImageIndex(getIndex(offset));
+						}
+					}}
 				>
 					{offset === 0 && (
 						<img
@@ -98,11 +98,11 @@ const ImageCarousel = () => {
 					>
 						<div
 							className="prev-caret"
-							onClick={() => handleImageClick(-1)}
+							onClick={() => setCurrentImageIndex(getIndex(-1))}
 						></div>
 						<div
 							className="next-caret"
-							onClick={() => handleImageClick(1)}
+							onClick={() => setCurrentImageIndex(getIndex(1))}
 						></div>
 						<div
 							className="modal-image"
