@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Projects.scss";
 import { projectData } from "./projectData.js";
 import moreIcon from "../../assets/more.svg";
 
 const Projects = () => {
 	const [activeProject, setActiveProject] = useState(null);
+	const projectsSectionRef = useRef(null);
 
 	const handleProjectClick = (index) => {
 		setActiveProject(index === activeProject ? null : index);
@@ -24,8 +25,18 @@ const Projects = () => {
 		return `rgba(${r}, ${g}, ${b}, 0.2)`;
 	};
 
+	useEffect(() => {
+		if (activeProject !== null && projectsSectionRef.current) {
+			projectsSectionRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [activeProject]);
+
 	return (
-		<div id="Projects" className="projects-section">
+		<div
+			id="Projects"
+			className="projects-section"
+			ref={projectsSectionRef}
+		>
 			<h1 className="projects-title">Projects</h1>
 			<div className="projects-container">
 				<div

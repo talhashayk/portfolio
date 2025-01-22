@@ -4,7 +4,7 @@ import "./Headline.scss";
 
 const Headline = () => {
 	return (
-		<div className="headline">
+		<div className="headline" id="About">
 			<h1 className="title">Hi. I’m Talha.</h1>
 			<h2 className="subtitle">
 				Big thinker. Problem solver. Software Engineer.
