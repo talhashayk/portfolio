@@ -14,7 +14,7 @@ export const imageCarouselData = [
 	{ image: image1, caption: "Catching rays" },
 	{ image: image2, caption: "Prague, Christmas Markets" },
 	{ image: image3, caption: "Catch and release" },
-	{ image: image4, caption: "I'm for lunch" },
+	{ image: image4, caption: "I'm lunch" },
 	{ image: image5, caption: "Livingstone" },
 	{ image: image6, caption: "Chiang Mai" },
 	{ image: image7, caption: "Koh Samui, Night Markets" },
