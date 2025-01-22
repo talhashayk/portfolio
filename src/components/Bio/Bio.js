@@ -10,7 +10,7 @@ const Bio = () => {
 				designing, building, and maintaining solid platforms.
 			</p>
 			<p className="bio-text">
-				I love collaborating with teams,taking on challenges, and
+				I love collaborating with teams, taking on challenges, and
 				creating innovative solutions that make an impact.
 			</p>
 			<p className="bio-text">
