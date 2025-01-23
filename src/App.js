@@ -9,6 +9,7 @@ import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
 import Bio from "./components/Bio/Bio";
 import Contact from "./components/Contact/Contact";
 import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	const [activeSection, setActiveSection] = useState(null);
@@ -31,6 +32,7 @@ function App() {
 				)}
 			</div>
 			<Projects />
+			<Footer />
 		</div>
 	);
 }
