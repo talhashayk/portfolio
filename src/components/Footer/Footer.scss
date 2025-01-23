@@ -67,7 +67,7 @@ body.dark-mode {
   flex-direction: column;
 }
 
-.footer-tagline {
+.footer-tagline, .footer-options {
   margin: 0;
 }
 
@@ -77,7 +77,7 @@ body.dark-mode {
   margin-bottom: 5px;
 }
 
-.footer a:hover {
+.footer a:hover, .footer-options:hover {
   transition: all 0.2s ease;
   opacity: 1;
   text-decoration: underline;
@@ -93,6 +93,7 @@ body.dark-mode {
   height: 15px;
   width: 15px;
   margin-bottom: -1px;
+  margin-left: -2px;
 }
 
 .mail-icon {

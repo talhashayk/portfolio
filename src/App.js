@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.scss";
 
@@ -13,6 +13,15 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
 	const [activeSection, setActiveSection] = useState(null);
+	const [isDarkMode, setIsDarkMode] = useState(false);
+
+	const toggleDarkMode = () => {
+		setIsDarkMode((prevMode) => !prevMode);
+	};
+
+	useEffect(() => {
+		document.body.className = isDarkMode ? "dark-mode" : "light-mode";
+	}, [isDarkMode]);
 
 	return (
 		<div className="App">
@@ -20,7 +29,10 @@ function App() {
 				setActiveSection={setActiveSection}
 				activeSection={activeSection}
 			/>
-			{TimeSlits()}
+			<TimeSlits
+				isDarkMode={isDarkMode}
+				toggleDarkMode={toggleDarkMode}
+			/>
 			<div className="main-content">
 				<Headline />
 				<Bio />
@@ -32,7 +44,7 @@ function App() {
 				)}
 			</div>
 			<Projects />
-			<Footer />
+			<Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 		</div>
 	);
 }

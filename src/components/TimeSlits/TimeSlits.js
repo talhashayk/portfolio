@@ -6,10 +6,9 @@ import sunIcon from "../../assets/sun.svg";
 import { useSunriseSunset } from "../../hooks/useSunriseSunset";
 import TimeSlit from "./TimeSlit";
 
-const TimeSlits = () => {
+const TimeSlits = ({ isDarkMode, toggleDarkMode }) => {
 	const [hoverIndex, setHoverIndex] = useState(null);
 	const { data: sunriseSunset, loading } = useSunriseSunset();
-	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	const currentTime = new Date();
 	const currentHour = currentTime.getHours();
@@ -17,14 +16,6 @@ const TimeSlits = () => {
 	const formattedTime = `${currentHour
 		.toString()
 		.padStart(2, "0")}:${currentMinutes}`;
-
-	const toggleDarkMode = () => {
-		setIsDarkMode((prevMode) => !prevMode);
-	};
-
-	useEffect(() => {
-		document.body.className = isDarkMode ? "dark-mode" : "light-mode";
-	}, [isDarkMode]);
 
 	const getSunriseSunsetHours = (sunriseSunsetTime) => {
 		if (!sunriseSunsetTime) return null;
@@ -39,16 +30,14 @@ const TimeSlits = () => {
 		const sunsetHour = getSunriseSunsetHours(sunriseSunset.sunset);
 
 		if (currentHour < sunriseHour || currentHour >= sunsetHour) {
-			setIsDarkMode(true);
-		} else {
-			setIsDarkMode(false);
+			toggleDarkMode();
 		}
 	}, [sunriseSunset, currentHour]);
 
 	if (loading) {
 		return (
 			<div className="loader-container">
-				<span class="loader"></span>
+				<span className="loader"></span>
 			</div>
 		);
 	}

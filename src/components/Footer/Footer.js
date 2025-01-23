@@ -9,8 +9,15 @@ import githubIcon from "../../assets/github.svg";
 import profileIcon from "../../assets/profile.svg";
 import projectsIcon from "../../assets/hammer.svg";
 import playIcon from "../../assets/game.svg";
+import sunIcon from "../../assets/sun.svg";
+import moonIcon from "../../assets/moon.svg";
+import pageTopIcon from "../../assets/up.svg";
 
-const Headline = () => {
+const Footer = ({ isDarkMode, toggleDarkMode }) => {
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<footer className="footer">
 			<div className="footer-content">
@@ -73,6 +80,20 @@ const Headline = () => {
 					</a>
 				</nav>
 				<div>
+					<p className="footer-options" onClick={toggleDarkMode}>
+						<img
+							src={isDarkMode ? moonIcon : sunIcon}
+							alt={"Theme"}
+							className="icon"
+						/>
+						Change theme
+					</p>
+					<p className="footer-options" onClick={scrollToTop}>
+						<img src={pageTopIcon} alt={"Up"} className="icon" />
+						Back to page top
+					</p>
+				</div>
+				<div>
 					<p className="footer-tagline">2025 Talha Sheikh.</p>
 					<p className="footer-tagline">
 						Crafting solutions with code and creativity.
@@ -83,4 +104,4 @@ const Headline = () => {
 	);
 };
 
-export default Headline;
+export default Footer;
