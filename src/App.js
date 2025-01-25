@@ -2,12 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./App.scss";
 
-import TimeSlits from "./components/TimeSlits/TimeSlits";
-import NavBar from "./components/NavBar/NavBar";
-import Headline from "./components/Headline/Headline";
-import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
-import Bio from "./components/Bio/Bio";
-import Contact from "./components/Contact/Contact";
+import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
 
@@ -25,24 +20,12 @@ function App() {
 
 	return (
 		<div className="App">
-			<NavBar
+			<About
+				isDarkMode={isDarkMode}
+				toggleDarkMode={toggleDarkMode}
 				setActiveSection={setActiveSection}
 				activeSection={activeSection}
 			/>
-			<TimeSlits
-				isDarkMode={isDarkMode}
-				toggleDarkMode={toggleDarkMode}
-			/>
-			<div className="main-content">
-				<Headline />
-				<Bio />
-			</div>
-			<ImageCarousel />
-			<div className="main-content">
-				{activeSection === "Contact" && (
-					<Contact setActiveSection={setActiveSection} />
-				)}
-			</div>
 			<Projects />
 			<Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 		</div>

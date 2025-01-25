@@ -4,6 +4,7 @@ import "./Footer.scss";
 
 import locationIcon from "../../assets/location.svg";
 import mailIcon from "../../assets/mail.svg";
+import downloadIcon from "../../assets/download.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import githubIcon from "../../assets/github.svg";
 import profileIcon from "../../assets/profile.svg";
@@ -22,14 +23,18 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 		<footer className="footer">
 			<div className="footer-content">
 				<div className="contact-info">
-					<p className="location">
+					<a
+						href="https://www.google.com/maps?q=Blackburn,Lancashire,UK"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<img
 							src={locationIcon}
 							alt={"Location"}
 							className="icon location-icon"
 						/>
 						Blackburn, UK
-					</p>
+					</a>
 					<a href="mailto:talha@example.com">
 						<img
 							src={mailIcon}
@@ -37,6 +42,19 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 							className="icon mail-icon"
 						/>
 						talhashake@gmail.com
+					</a>
+					<a
+						href="/talha-cv.pdf"
+						download="talha-cv.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img
+							src={downloadIcon}
+							alt={"CV"}
+							className="icon download-icon"
+						/>
+						Download my CV
 					</a>
 				</div>
 				<div className="social-links">
@@ -62,7 +80,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 					</a>
 				</div>
 				<nav className="footer-nav">
-					<a href="#About">
+					<a href="#top">
 						<img src={profileIcon} alt={"About"} className="icon" />
 						About
 					</a>
@@ -74,7 +92,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 						/>
 						Projects
 					</a>
-					<a href="#Play">
+					<a href="#top">
 						<img src={playIcon} alt={"Play"} className="icon" />
 						Play
 					</a>
