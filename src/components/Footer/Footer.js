@@ -44,7 +44,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 						talhashake@gmail.com
 					</a>
 					<a
-						href="/talha-cv.pdf"
+						href={`${process.env.PUBLIC_URL}/talha-cv.pdf`}
 						download="talha-cv.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
