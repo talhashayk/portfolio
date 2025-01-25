@@ -41,7 +41,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 				</div>
 				<div className="social-links">
 					<a
-						href="https://github.com/yourprofile"
+						href="https://github.com/talhashayk"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -49,7 +49,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 						GitHub
 					</a>
 					<a
-						href="https://linkedin.com/in/yourprofile"
+						href="https://linkedin.com/in/talhasheikhswe"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
