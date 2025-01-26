@@ -6,6 +6,7 @@ import Tenzies from "../Tenzies/Tenzies";
 const Play = ({ isDarkMode }) => {
 	return (
 		<div id="Play" className="play-section">
+			<div className="divider"></div>
 			<h1 className="play-title">Play</h1>
 			<div className="games">
 				<div className="coming-soon">
