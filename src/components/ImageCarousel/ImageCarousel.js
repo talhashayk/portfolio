@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./ImageCarousel.scss";
 import { imageCarouselData } from "./imageCarouselData";
@@ -85,6 +85,24 @@ const ImageCarousel = () => {
 			opacity: calculatedOpacity,
 		};
 	};
+
+	useEffect(() => {
+		const handleKeyDown = (e) => {
+			if (isModalOpen) {
+				if (e.key === "ArrowLeft") {
+					setCurrentImageIndex(getIndex(-1));
+				} else if (e.key === "ArrowRight") {
+					setCurrentImageIndex(getIndex(1));
+				}
+			}
+		};
+
+		window.addEventListener("keydown", handleKeyDown);
+
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [isModalOpen, currentImageIndex, getIndex]);
 
 	return (
 		<>

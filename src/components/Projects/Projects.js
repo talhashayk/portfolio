@@ -56,18 +56,21 @@ const Projects = () => {
 						>
 							<h3 className="project-title">{project.title}</h3>
 							<div className="skills">
-								{project.skills.slice(0, 2).map((skill) => (
-									<p
-										className="skill"
-										style={{
-											backgroundColor: `${getBackgroundColorFromText(
-												skill
-											)}`,
-										}}
-									>
-										{skill}
-									</p>
-								))}
+								{project.skills
+									.slice(0, 2)
+									.map((skill, skillIndex) => (
+										<p
+											key={`${project.title}-skill-${skillIndex}`}
+											className="skill"
+											style={{
+												backgroundColor: `${getBackgroundColorFromText(
+													skill
+												)}`,
+											}}
+										>
+											{skill}
+										</p>
+									))}
 								<img
 									src={moreIcon}
 									alt={"more"}
@@ -94,8 +97,9 @@ const Projects = () => {
 							</p>
 							<div className="skills">
 								{projectData[activeProject].skills.map(
-									(skill) => (
+									(skill, skillIndex) => (
 										<p
+											key={`active-project-skill-${skillIndex}`}
 											className="skill"
 											style={{
 												backgroundColor: `${getBackgroundColorFromText(
