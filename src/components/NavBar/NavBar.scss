@@ -110,19 +110,18 @@ body.dark-mode {
     margin: 0px;
   }
 
-
-.navbar-tooltip {
-  position: absolute;
-  top: -12px;
-  left: 45px;
-  background-color: white;
-  color: black;
-  padding: 5px 0px 3px;
-  border-radius: 10px;
-  font-family: "Arial";
-  font-size: 12px;
-  opacity: 1;
-  width: 35px;
-  transition: opacity 0.3s ease;
-}
+  .navbar-tooltip {
+    position: absolute;
+    top: -12px;
+    left: 45px;
+    background-color: white;
+    color: black;
+    padding: 5px 0px 3px;
+    border-radius: 10px;
+    font-family: "Arial";
+    font-size: 12px;
+    opacity: 1;
+    width: 35px;
+    transition: opacity 0.3s ease;
+  }
 }

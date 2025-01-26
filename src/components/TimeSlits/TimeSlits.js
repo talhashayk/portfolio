@@ -32,6 +32,7 @@ const TimeSlits = ({ isDarkMode, toggleDarkMode }) => {
 		if (currentHour < sunriseHour || currentHour >= sunsetHour) {
 			toggleDarkMode();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [sunriseSunset, currentHour]);
 
 	if (loading) {

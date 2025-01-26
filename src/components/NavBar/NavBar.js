@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavBar.scss";
 
 const NavBar = ({ setActiveSection, activeSection }) => {
-	const [showTooltip, setShowTooltip] = useState(false);
-
 	const navItems = [
 		{ label: "About", icon: "profile.svg" },
 		{ label: "Projects", icon: "hammer.svg" },
 		{ label: "Play", icon: "game.svg" },
 		{ label: "Contact", icon: "contact.svg" },
 	];
-
-	const isMobile = window.matchMedia("(max-width: 600px)").matches;
 
 	const scrollToSection = (id) => {
 		const element = document.getElementById(id);
@@ -21,12 +17,6 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 	};
 
 	const handleButtonClick = (label) => {
-		if (label === "Play") {
-			setShowTooltip(!showTooltip);
-		} else {
-			setShowTooltip(false);
-		}
-
 		if (activeSection !== label) {
 			setActiveSection(label);
 			scrollToSection(label);
@@ -57,13 +47,6 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 						className={`navbar-icon navbar-icon-${item.label.toLowerCase()}`}
 					/>
 					<span className="hide-from-mobile">{item.label}</span>
-					{item.label === "Play" && showTooltip && (
-						<p className="navbar-tooltip">
-							{!isMobile
-								? "This section is a WIP, check back soon!"
-								: "WIP"}
-						</p>
-					)}
 				</button>
 			))}
 		</nav>

@@ -92,7 +92,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 						/>
 						Projects
 					</a>
-					<a href="#top">
+					<a href="#Play">
 						<img src={playIcon} alt={"Play"} className="icon" />
 						Play
 					</a>

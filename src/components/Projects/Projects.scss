@@ -80,17 +80,13 @@ body.dark-mode {
 }
 
 .projects-section {
-  padding-bottom: 300px;
+  padding-bottom: 50px;
   width: 80%;
   margin: auto;
   margin-top: -50px;
   padding-top: 50px;
   opacity: 0;
   animation: appearProjects 2s 1.5s forwards;
-
-  @media only screen and (max-width: 600px) {
-    padding-bottom: 100px;
-  }
 }
 
 .projects-title {
