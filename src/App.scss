@@ -25,14 +25,14 @@ body.light-mode {
   color: $base-text-colour-light;
   background: $background-gradient-animation-light;
 	background-size: 400% 700%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 10s ease infinite;
 }
 
 body.dark-mode {
   color: $base-text-colour-dark;
   background: $background-gradient-animation-dark;
 	background-size: 400% 700%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 10s ease infinite;
 }
 
 body {
