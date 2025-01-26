@@ -33,9 +33,16 @@ body.dark-mode {
 }
   
 .navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 20px;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(100px) brightness(115%);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
   
 .navbar-button {
@@ -53,11 +60,6 @@ body.dark-mode {
   
 .navbar-button:hover {
   transition: all 0.3s ease;
-  border-radius: 8px;
-  opacity: 1;
-}
-
-.navbar-button.active {
   border-radius: 8px;
   opacity: 1;
 }

@@ -63,10 +63,7 @@ const TimeSlits = ({ isDarkMode, toggleDarkMode }) => {
 	));
 
 	return (
-		<div
-			className="time-slits-container"
-			onMouseLeave={() => setHoverIndex(null)}
-		>
+		<>
 			<div className="mode-identifier" onClick={toggleDarkMode}>
 				<div className="mode-identifier-title">
 					{isDarkMode ? (
@@ -84,16 +81,16 @@ const TimeSlits = ({ isDarkMode, toggleDarkMode }) => {
 					)}
 					<p className="theme-identifier-text">Theme</p>
 				</div>
-				<p className="mode-identifier-text">
-					Select an hour with a different theme to toggle between
-					light and dark mode
-				</p>
-				<p className="mode-identifier-text">
-					(or click here for a less fun / better UX option)
-				</p>
 			</div>
-			{slits}
-		</div>
+			<div
+				className="time-slits-container"
+				onMouseLeave={() => setHoverIndex(null)}
+			>
+				<div className="time-slits-container slits-container">
+					{slits}
+				</div>
+			</div>
+		</>
 	);
 };
 
