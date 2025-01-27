@@ -102,7 +102,8 @@ const ImageCarousel = () => {
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [isModalOpen, currentImageIndex, getIndex]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isModalOpen, currentImageIndex]);
 
 	return (
 		<>

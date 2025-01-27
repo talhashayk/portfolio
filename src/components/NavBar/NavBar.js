@@ -6,7 +6,7 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 		{ label: "About", icon: "profile.svg" },
 		{ label: "Projects", icon: "hammer.svg" },
 		{ label: "Play", icon: "game.svg" },
-		{ label: "Contact", icon: "contact.svg" },
+		{ label: "Chat", icon: "contact.svg" },
 	];
 
 	const scrollToSection = (id) => {
@@ -35,9 +35,9 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 					}`}
 					style={{
 						position: `${
-							item.label === "Contact" ? "absolute" : "relative"
+							item.label === "Chat" ? "absolute" : "relative"
 						}`,
-						right: `${item.label === "Contact" ? "20px" : "0"}`,
+						right: `${item.label === "Chat" ? "20px" : "0"}`,
 					}}
 					onClick={() => handleButtonClick(item.label)}
 				>

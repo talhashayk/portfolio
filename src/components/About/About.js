@@ -29,7 +29,7 @@ const About = ({
 			</div>
 			<ImageCarousel />
 			<div className="main-content">
-				{activeSection === "Contact" && (
+				{activeSection === "Chat" && (
 					<Contact setActiveSection={setActiveSection} />
 				)}
 			</div>
