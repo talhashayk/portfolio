@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./NavBar.scss";
 
 const NavBar = ({ setActiveSection, activeSection }) => {
+	const [isScrolled, setIsScrolled] = useState(false);
+
 	const navItems = [
 		{ label: "About", icon: "profile.svg" },
 		{ label: "Projects", icon: "hammer.svg" },
@@ -25,8 +27,17 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 		}
 	};
 
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 0);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
-		<nav className="navbar">
+		<nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
 			{navItems.map((item, index) => (
 				<button
 					key={index}
