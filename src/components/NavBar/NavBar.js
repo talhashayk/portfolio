@@ -14,7 +14,10 @@ const NavBar = ({ setActiveSection, activeSection }) => {
 	const scrollToSection = (id) => {
 		const element = document.getElementById(id);
 		if (element) {
-			element.scrollIntoView({ behavior: "smooth", block: "start" });
+			window.scrollTo({
+				top: element.getBoundingClientRect().top + window.scrollY - 30,
+				behavior: "smooth",
+			});
 		}
 	};
 
