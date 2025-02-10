@@ -1,0 +1,132 @@
+.image-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 10px 10px 50px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; // Hide scrollbar for Firefox
+}
+
+.image-slider::-webkit-scrollbar {
+  display: none; // Hide scrollbar for WebKit browsers
+}
+
+.image {
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.2s ease;
+}
+
+.expand-image {
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 0;
+  margin: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 50%;
+  height: 75%;
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-image {
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/close.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.modal-close-button:hover {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.prev-caret,
+.next-caret {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/caret.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.5;
+  top: 48%;
+  border: none;
+  z-index: 1;
+}
+
+.prev-caret {
+  left: 10px;
+  transform: rotate(-90deg);
+}
+
+.next-caret {
+  right: 10px;
+  transform: rotate(90deg);
+}
+
+.prev-caret:hover,
+.next-caret:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.prev-caret:active,
+.next-caret:active {
+  opacity: 1;
+}
+
+.caption-container {
+  display: flex;
+  justify-content: center;
+}
+
+.caption {
+  bottom: 50px;
+  padding: 2px 6px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+}

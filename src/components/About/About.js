@@ -3,7 +3,7 @@ import React from "react";
 import TimeSlits from "../TimeSlits/TimeSlits";
 import NavBar from "../NavBar/NavBar";
 import Headline from "../Headline/Headline";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import ImageSlider from "../ImageSlider/ImageSlider";
 import Bio from "../Bio/Bio";
 import Contact from "../Contact/Contact";
 
@@ -27,7 +27,7 @@ const About = ({
 				<Headline />
 				<Bio />
 			</div>
-			<ImageCarousel />
+			<ImageSlider />
 			<div className="main-content">
 				{activeSection === "Chat" && (
 					<Contact setActiveSection={setActiveSection} />
