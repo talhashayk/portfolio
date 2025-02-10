@@ -10,9 +10,6 @@ const ImageSlider = () => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const sliderRef = useRef(null);
-	const [isDragging, setIsDragging] = useState(false);
-	const [startX, setStartX] = useState(0);
-	const [scrollLeft, setScrollLeft] = useState(0);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
 	const getIndex = (offset) =>
@@ -53,24 +50,6 @@ const ImageSlider = () => {
 		));
 	};
 
-	const startDrag = (e) => {
-		setIsDragging(true);
-		setStartX(e.pageX - sliderRef.current.offsetLeft);
-		setScrollLeft(sliderRef.current.scrollLeft);
-	};
-
-	const stopDrag = () => {
-		setIsDragging(false);
-	};
-
-	const onDrag = (e) => {
-		if (!isDragging) return;
-		e.preventDefault();
-		const x = e.pageX - sliderRef.current.offsetLeft;
-		const walk = (x - startX) * 2; // scroll-fast
-		sliderRef.current.scrollLeft = scrollLeft - walk;
-	};
-
 	const handleScroll = () => {
 		const slider = sliderRef.current;
 		const maxScrollLeft = slider.scrollWidth / 3;
@@ -90,23 +69,15 @@ const ImageSlider = () => {
 
 	useEffect(() => {
 		const slider = sliderRef.current;
-		slider.addEventListener("mousedown", startDrag);
-		slider.addEventListener("mouseleave", stopDrag);
-		slider.addEventListener("mouseup", stopDrag);
-		slider.addEventListener("mousemove", onDrag);
 		slider.addEventListener("scroll", handleScroll);
 		window.addEventListener("scroll", handlePageScroll);
 
 		return () => {
-			slider.removeEventListener("mousedown", startDrag);
-			slider.removeEventListener("mouseleave", stopDrag);
-			slider.removeEventListener("mouseup", stopDrag);
-			slider.removeEventListener("mousemove", onDrag);
 			slider.removeEventListener("scroll", handleScroll);
 			window.removeEventListener("scroll", handlePageScroll);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isDragging, startX, scrollLeft, lastScrollY]);
+	}, [lastScrollY]);
 
 	useEffect(() => {
 		const handleKeyDown = (e) => {
