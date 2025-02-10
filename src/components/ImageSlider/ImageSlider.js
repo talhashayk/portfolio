@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./ImageSlider.scss";
 import "../ImageCarousel/ImageCarousel.scss";
+import "./ImageSlider.scss";
 import { imageCarouselData } from "../ImageCarousel/imageCarouselData";
 import expandIcon from "../../assets/expand.svg";
 
@@ -9,8 +9,10 @@ const ImageSlider = () => {
 	const images = imageCarouselData;
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const sliderRef = useRef(null);
+	const slider1Ref = useRef(null);
+	const slider2Ref = useRef(null);
 	const [lastScrollY, setLastScrollY] = useState(0);
+	const syncingRef = useRef(false); // flag to prevent recursive syncing
 
 	const getIndex = (offset) =>
 		(currentImageIndex + offset + images.length) % images.length;
@@ -36,8 +38,8 @@ const ImageSlider = () => {
 					backgroundImage: `url(${image.image})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					height: "300px",
-					width: "300px",
+					height: "200px",
+					width: "200px",
 				}}
 				onClick={() => openModal(index % images.length)}
 			>
@@ -50,30 +52,76 @@ const ImageSlider = () => {
 		));
 	};
 
-	const handleScroll = () => {
-		const slider = sliderRef.current;
-		const maxScrollLeft = slider.scrollWidth / 3;
-		if (slider.scrollLeft >= maxScrollLeft * 2) {
-			slider.scrollLeft -= maxScrollLeft;
-		} else if (slider.scrollLeft <= maxScrollLeft) {
-			slider.scrollLeft += maxScrollLeft;
-		}
-	};
-
-	const handlePageScroll = () => {
-		const slider = sliderRef.current;
-		const scrollAmount = (window.scrollY - lastScrollY) * 1;
-		slider.scrollLeft += scrollAmount;
-		setLastScrollY(window.scrollY);
-	};
+	useEffect(() => {
+		const slider1 = slider1Ref.current;
+		const slider2 = slider2Ref.current;
+		const oneSetWidth = slider1.scrollWidth / 3;
+		const imageWidth = oneSetWidth / images.length;
+		// Set first slider at beginning and second slider offset by 6.5 images
+		slider1.scrollLeft = 0;
+		slider2.scrollLeft = 6 * imageWidth + imageWidth / 2;
+	}, [images]);
 
 	useEffect(() => {
-		const slider = sliderRef.current;
-		slider.addEventListener("scroll", handleScroll);
+		const slider1 = slider1Ref.current;
+		const slider2 = slider2Ref.current;
+		const maxScrollLeft = slider1.scrollWidth / 3; // assumed same for both
+
+		const handleInfiniteScroll = (slider) => {
+			if (slider.scrollLeft >= maxScrollLeft * 2) {
+				slider.scrollLeft -= maxScrollLeft;
+			} else if (slider.scrollLeft <= 0) {
+				slider.scrollLeft += maxScrollLeft;
+			}
+		};
+
+		const handlePageScroll = () => {
+			const scrollDelta = window.scrollY - lastScrollY;
+			slider1.scrollLeft += scrollDelta;
+			slider2.scrollLeft += scrollDelta;
+			[slider1, slider2].forEach((slider) => {
+				if (slider.scrollLeft >= maxScrollLeft * 2) {
+					slider.scrollLeft -= maxScrollLeft;
+				} else if (slider.scrollLeft <= 0) {
+					slider.scrollLeft += maxScrollLeft;
+				}
+			});
+			setLastScrollY(window.scrollY);
+		};
+
+		const syncScroll = (source, target, isSourceSlider1) => {
+			if (syncingRef.current) return;
+			syncingRef.current = true;
+			const oneSetWidth = slider1.scrollWidth / 3;
+			const imageWidth = oneSetWidth / images.length;
+			const staggerOffset = 6 * imageWidth + imageWidth / 2;
+			if (isSourceSlider1) {
+				target.scrollLeft = source.scrollLeft + staggerOffset;
+			} else {
+				target.scrollLeft = source.scrollLeft - staggerOffset;
+			}
+			setTimeout(() => {
+				syncingRef.current = false;
+			}, 0);
+		};
+
+		const s1ScrollHandler = () => {
+			handleInfiniteScroll(slider1);
+			syncScroll(slider1, slider2, true);
+		};
+
+		const s2ScrollHandler = () => {
+			handleInfiniteScroll(slider2);
+			syncScroll(slider2, slider1, false);
+		};
+
+		slider1.addEventListener("scroll", s1ScrollHandler);
+		slider2.addEventListener("scroll", s2ScrollHandler);
 		window.addEventListener("scroll", handlePageScroll);
 
 		return () => {
-			slider.removeEventListener("scroll", handleScroll);
+			slider1.removeEventListener("scroll", s1ScrollHandler);
+			slider2.removeEventListener("scroll", s2ScrollHandler);
 			window.removeEventListener("scroll", handlePageScroll);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -98,21 +146,18 @@ const ImageSlider = () => {
 		};
 
 		window.addEventListener("keydown", handleKeyDown, true);
-
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown, true);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isModalOpen]);
 
-	useEffect(() => {
-		const slider = sliderRef.current;
-		slider.scrollLeft = slider.scrollWidth / 3 - 5;
-	}, []);
-
 	return (
 		<>
-			<div className="image-slider" ref={sliderRef}>
+			<div className="image-slider" ref={slider1Ref}>
+				{renderImages()}
+			</div>
+			<div className="image-slider" ref={slider2Ref}>
 				{renderImages()}
 			</div>
 

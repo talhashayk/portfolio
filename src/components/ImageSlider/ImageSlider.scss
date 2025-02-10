@@ -2,13 +2,13 @@
   display: flex;
   overflow-x: auto;
   gap: 10px;
-  padding: 10px 10px 10px 50px;
+  padding: 10px 10px 0 10px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; // Hide scrollbar for Firefox
+  scrollbar-width: none; 
 }
 
 .image-slider::-webkit-scrollbar {
-  display: none; // Hide scrollbar for WebKit browsers
+  display: none; 
 }
 
 .image {
@@ -129,4 +129,18 @@
   text-align: center;
   position: relative;
   border-radius: 10px;
+}
+
+.image-slider-reverse {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 10px 10px 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex-direction: row-reverse;
+}
+
+.image-slider-reverse::-webkit-scrollbar {
+  display: none; 
 }
