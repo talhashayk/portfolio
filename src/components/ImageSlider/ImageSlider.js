@@ -35,10 +35,6 @@ const ImageSlider = () => {
 				className="image"
 				style={{
 					backgroundImage: `url(${image.thumbnail})`,
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					height: "200px",
-					width: "200px",
 				}}
 				onClick={() => openModal(index % images.length)}
 			>
@@ -54,11 +50,9 @@ const ImageSlider = () => {
 	useEffect(() => {
 		const slider1 = slider1Ref.current;
 		const slider2 = slider2Ref.current;
-		const oneSetWidth = slider1.scrollWidth / 3;
-		const imageWidth = oneSetWidth / images.length;
-		// Set first slider at beginning and second slider offset by 6.5 images
+		const imageWidth = slider1.scrollWidth / 3 / images.length;
 		slider1.scrollLeft = 0;
-		slider2.scrollLeft = 6 * imageWidth + imageWidth / 2;
+		slider2.scrollLeft = 6.5 * imageWidth;
 	}, [images]);
 
 	useEffect(() => {
@@ -93,7 +87,7 @@ const ImageSlider = () => {
 			syncingRef.current = true;
 			const oneSetWidth = slider1.scrollWidth / 3;
 			const imageWidth = oneSetWidth / images.length;
-			const staggerOffset = 6 * imageWidth + imageWidth / 2;
+			const staggerOffset = 6.5 * imageWidth;
 			if (isSourceSlider1) {
 				target.scrollLeft = source.scrollLeft + staggerOffset;
 			} else {
@@ -129,7 +123,6 @@ const ImageSlider = () => {
 	useEffect(() => {
 		const handleKeyDown = (e) => {
 			if (isModalOpen) {
-				e.stopImmediatePropagation();
 				if (e.key === "ArrowLeft") {
 					setCurrentImageIndex((prevIndex) =>
 						getIndex(prevIndex - 1)
@@ -139,8 +132,6 @@ const ImageSlider = () => {
 						getIndex(prevIndex + 1)
 					);
 				}
-			} else if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-				e.preventDefault();
 			}
 		};
 
