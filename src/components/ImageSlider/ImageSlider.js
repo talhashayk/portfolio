@@ -12,6 +12,15 @@ const ImageSlider = () => {
 	const slider2Ref = useRef(null);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const syncingRef = useRef(false); // flag to prevent recursive syncing
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 600);
+		};
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	const getIndex = (offset) =>
 		(currentImageIndex + offset + images.length) % images.length;
@@ -49,13 +58,17 @@ const ImageSlider = () => {
 
 	useEffect(() => {
 		const slider1 = slider1Ref.current;
-		const slider2 = slider2Ref.current;
+		if (!slider1) return;
 		const imageWidth = slider1.scrollWidth / 3 / images.length;
 		slider1.scrollLeft = 0;
-		slider2.scrollLeft = 6.5 * imageWidth;
-	}, [images]);
+		if (!isMobile) {
+			const slider2 = slider2Ref.current;
+			slider2.scrollLeft = 6.5 * imageWidth;
+		}
+	}, [images, isMobile]);
 
 	useEffect(() => {
+		if (isMobile) return;
 		const slider1 = slider1Ref.current;
 		const slider2 = slider2Ref.current;
 		const maxScrollLeft = slider1.scrollWidth / 3;
@@ -118,7 +131,21 @@ const ImageSlider = () => {
 			window.removeEventListener("scroll", handlePageScroll);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [lastScrollY]);
+	}, [lastScrollY, isMobile]);
+
+	useEffect(() => {
+		if (!isMobile) return;
+		const slider1 = slider1Ref.current;
+		if (!slider1) return;
+		const handlePageScrollMobile = () => {
+			const scrollDelta = window.scrollY - lastScrollY;
+			slider1.scrollLeft += scrollDelta;
+			setLastScrollY(window.scrollY);
+		};
+		window.addEventListener("scroll", handlePageScrollMobile);
+		return () =>
+			window.removeEventListener("scroll", handlePageScrollMobile);
+	}, [lastScrollY, isMobile]);
 
 	useEffect(() => {
 		const handleKeyDown = (e) => {
@@ -147,9 +174,11 @@ const ImageSlider = () => {
 			<div className="image-slider" ref={slider1Ref}>
 				{renderImages()}
 			</div>
-			<div className="image-slider" ref={slider2Ref}>
-				{renderImages()}
-			</div>
+			{!isMobile && (
+				<div className="image-slider" ref={slider2Ref}>
+					{renderImages()}
+				</div>
+			)}
 
 			{isModalOpen && (
 				<div className="modal-overlay modal-open" onClick={closeModal}>

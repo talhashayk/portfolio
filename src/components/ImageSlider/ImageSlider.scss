@@ -94,6 +94,15 @@ body.dark-mode {
   }
 }
 
+@keyframes appearSlider {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .image-slider {
   display: flex;
   overflow-x: auto;
@@ -101,6 +110,8 @@ body.dark-mode {
   padding: 8px 10px 0 10px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; 
+  opacity: 0;
+  animation: appearSlider 2s 1.5s forwards;
 }
 
 .image-slider::-webkit-scrollbar {
@@ -256,8 +267,8 @@ body.dark-mode {
 
 @media only screen and (max-width: 600px) {
   .image {
-    height: 100px !important;
-    width: 100px !important;
+    height: 150px !important;
+    width: 150px !important;
   }
 
   .modal-content {
