@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "../ImageCarousel/ImageCarousel.scss";
 import "./ImageSlider.scss";
-import { imageCarouselData } from "../ImageCarousel/imageCarouselData";
+import { imageSliderData } from "../ImageSlider/ImageSliderData";
 import expandIcon from "../../assets/expand.svg";
 
 const ImageSlider = () => {
-	const images = imageCarouselData;
+	const images = imageSliderData;
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const slider1Ref = useRef(null);
@@ -35,7 +34,7 @@ const ImageSlider = () => {
 				key={index}
 				className="image"
 				style={{
-					backgroundImage: `url(${image.image})`,
+					backgroundImage: `url(${image.thumbnail})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					height: "200px",
@@ -65,7 +64,7 @@ const ImageSlider = () => {
 	useEffect(() => {
 		const slider1 = slider1Ref.current;
 		const slider2 = slider2Ref.current;
-		const maxScrollLeft = slider1.scrollWidth / 3; // assumed same for both
+		const maxScrollLeft = slider1.scrollWidth / 3;
 
 		const handleInfiniteScroll = (slider) => {
 			if (slider.scrollLeft >= maxScrollLeft * 2) {

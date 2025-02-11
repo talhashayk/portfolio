@@ -1,3 +1,99 @@
+@import "../../assets/vars.scss";
+
+body.light-mode {
+  .image:hover {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .image:active {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.9);
+    transition: all 0.2s ease;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .image:active, .image:hover {
+      box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .image-carousel {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), $overlay-background-colour-light, rgba(0, 0, 0, 0));
+  }
+
+  .image-carousel-next::after, .image-carousel-prev::before, .prev-caret, .next-caret {
+    filter: $filter-svg-light;
+  }
+
+  .expand-image {
+    filter: $filter-svg-dark;
+  }
+
+  .modal-overlay {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .modal-content {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);;
+    position: relative;
+  }
+
+  .modal-close-button {
+    filter: $filter-svg-light;
+  }
+
+  .caption {
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.3);
+    background-color: $base-background-colour-light;
+    color: $secondary-text-colour-light;
+  }
+}
+
+body.dark-mode {
+  .image:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .image:active {
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.9);
+    transition: all 0.2s ease;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .image:active, .image:hover {
+      box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  .image-carousel {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), $overlay-background-colour-dark, rgba(255, 255, 255, 0));
+  }
+
+  .image-carousel-next::after, .image-carousel-prev::before, .prev-caret, .next-caret {
+    filter: invert(98%) sepia(1%) saturate(307%) hue-rotate(212deg) brightness(118%) contrast(100%);
+  }
+
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.1);;
+    position: relative;
+  }
+
+  .modal-close-button {
+    filter: $filter-svg-dark;
+  }
+
+  .caption {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+    background-color: $base-background-colour-dark;
+    color: $secondary-text-colour-dark;
+  }
+}
+
 .image-slider {
   display: flex;
   overflow-x: auto;
@@ -16,21 +112,32 @@
   border-radius: 5px;
   position: relative;
   flex: 0 0 auto;
+  margin-bottom: 2px;
   width: 300px;
   height: 300px;
   transition: transform 0.2s ease;
 }
 
 .expand-image {
-  height: 20px;
-  width: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
-  padding: 0;
-  margin: 5px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  display: none;
+}
+
+@media only screen and (min-width: 601px) {
+  .image:hover, .image:active  {
+    .expand-image {
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 5px;
+      padding: 0;
+      margin: 5px;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  
 }
 
 .modal-overlay {
@@ -143,4 +250,21 @@
 
 .image-slider-reverse::-webkit-scrollbar {
   display: none; 
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    height: 100px !important;
+    width: 100px !important;
+  }
+
+  .modal-content {
+    height: 50%;
+    width: 90%;
+  }
+
+  .modal-image {
+    width: 80% !important;
+    margin: auto;
+  }
 }
