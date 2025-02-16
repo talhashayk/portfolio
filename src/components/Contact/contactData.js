@@ -51,7 +51,7 @@ export const userOptionsData = {
 		"Looking forward to hearing from you!",
 		"I'll respond as soon as I can!",
 	],
-	"I'd like to hire you.": [
+	"I'd like to work with you.": [
 		"That's awesome!",
 		<a
 			href="mailto:talhashake@gmail.com"
