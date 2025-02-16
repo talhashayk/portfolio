@@ -1,0 +1,145 @@
+body.light-mode {
+  .tic-tac-toe {
+    background: rgb(0, 0, 0, 0.05);
+  }
+
+  .cell {
+    background: rgb(0, 0, 0, 0.1);
+    color: black;
+  }
+
+  .tic-tac-toe-cta {
+    background: rgb(0, 0, 0, 0.1);
+    color: black;
+  }
+
+  .tic-tac-toe-cta:hover {
+    background: rgb(0, 0, 0, 0.15);
+  }
+
+  .tic-tac-toe-cta:active {
+    background: rgb(0, 0, 0, 0.25);
+  }
+}
+
+body.dark-mode {
+  .tic-tac-toe {
+    background: rgb(255, 255, 255, 0.05);
+  }
+
+  .cell {
+    background: rgb(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .tic-tac-toe-cta {
+    background: rgb(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .tic-tac-toe-cta:hover {
+    background: rgb(255, 255, 255, 0.15);
+  }
+
+  .tic-tac-toe-cta:active {
+    background: rgb(255, 255, 255, 0.25);
+  }
+}
+
+.tic-tac-toe {
+  height: 450px;
+  width: 450px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 100px;
+  font-family: "Futura", sans-serif;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.tic-tac-toe-title {
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin: 10px 0 0;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
+}
+
+.board {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  @media only screen and (max-width: 600px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.tic-tac-toe-instructions {
+  font-weight: 400;
+  margin-top: 20px;
+  text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+.tic-tac-toe-cta {
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Futura", sans-serif;
+  border-style: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tic-tac-toe-status {
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Futura", sans-serif;
+  border-style: none;
+  transition: all 0.2s ease;
+}
+
+.tic-tac-toe-info {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 0;
+  }
+}

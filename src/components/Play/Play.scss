@@ -20,6 +20,11 @@ body.dark-mode {
   opacity: 0;
   text-align: left;
   animation: appearProjects 2s 1.5s forwards;
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+    margin: -50px auto auto 10%;
+  }
 }
 
 .play-title {
@@ -39,12 +44,15 @@ body.dark-mode {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
+  overflow-x: auto;
+  width: 100%;
 }
 
 .coming-soon {
-  height: 400px;
+  height: 450px;
   width: 450px;
   border-radius: 15px;
+  margin: 0px auto 100px;
 
   @media only screen and (max-width: 600px) {
     display: none;
