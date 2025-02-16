@@ -129,7 +129,11 @@ body.dark-mode {
   transition: all 0.3s ease;
   width: 24%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1750px) {
+    width: 32%;
+  }
+
+  @media only screen and (max-width: 1250px) {
     width: 48%;
   }
 }
