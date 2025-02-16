@@ -21,6 +21,10 @@ body.dark-mode {
   .bio-text {
     background-color: $overlay-background-colour-dark;
   } 
+
+  .hello {
+    filter: $filter-svg-dark;
+  }
 }
 
 .bio-group {
@@ -50,4 +54,19 @@ body.dark-mode {
     border-radius: 10px;
     font-size: 12px;
   } 
+}
+
+@media only screen and (max-width: 1750px) {
+  .hello {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1751px) {
+  .hello {
+    position: absolute;
+    height: 300px;
+    top: -284px;
+    right: -70px;
+  }
 }
