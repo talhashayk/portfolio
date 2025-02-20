@@ -14,16 +14,14 @@ body.dark-mode {
 
 .play-section {
   width: 80%;
-  margin: auto;
-  margin-top: -50px;
+  margin: -50px auto 100px;
   padding-top: 50px;
   opacity: 0;
   text-align: left;
   animation: appearProjects 2s 1.5s forwards;
 
   @media only screen and (max-width: 600px) {
-    width: 90%;
-    margin: -50px auto auto 10%;
+    width: 100%;
   }
 }
 
@@ -35,6 +33,7 @@ body.dark-mode {
   opacity: 0.95;
 
   @media only screen and (max-width: 600px) {
+    margin-left: 10%;
     font-size: 2.4rem;
     margin-bottom: 15px;
   }
@@ -42,17 +41,21 @@ body.dark-mode {
 
 .games {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 10px;
   overflow-x: auto;
   width: 100%;
+
+  @media only screen and (max-width: 600px) {
+    gap: 20px;
+    padding: 0 10%;
+  }
 }
 
 .coming-soon {
   height: 450px;
   width: 450px;
   border-radius: 15px;
-  margin: 0px auto 100px;
 
   @media only screen and (max-width: 600px) {
     display: none;

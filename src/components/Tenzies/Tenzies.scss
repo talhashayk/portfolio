@@ -95,8 +95,7 @@ body.dark-mode {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 auto 100px;
+  align-items: center; 
   font-family: "Futura", sans-serif;
 
   @media only screen and (max-width: 600px) {
