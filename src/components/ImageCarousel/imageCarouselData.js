@@ -9,6 +9,10 @@ import image8 from "../../images/image8.png";
 import image9 from "../../images/image9.png";
 import image10 from "../../images/image10.png";
 import image11 from "../../images/image11.png";
+import image12 from "../../images/image12.png";
+import image13 from "../../images/image13.png";
+import image14 from "../../images/image14.png";
+import image15 from "../../images/image15.png";
 
 export const imageCarouselData = [
 	{ image: image1, caption: "Catching rays" },
@@ -22,4 +26,8 @@ export const imageCarouselData = [
 	{ image: image9, caption: "Bouldering" },
 	{ image: image10, caption: "The Algarve" },
 	{ image: image11, caption: "Koh Tao" },
+	{ image: image12, caption: "Hungry" },
+	{ image: image13, caption: "Pottery" },
+	{ image: image14, caption: "Doodling" },
+	{ image: image15, caption: "Cappadocia" },
 ];

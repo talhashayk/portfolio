@@ -9,6 +9,10 @@ import image8 from "../../images/image8.png";
 import image9 from "../../images/image9.png";
 import image10 from "../../images/image10.png";
 import image11 from "../../images/image11.png";
+import image12 from "../../images/image12.png";
+import image13 from "../../images/image13.png";
+import image14 from "../../images/image14.png";
+import image15 from "../../images/image15.png";
 
 import thumb1 from "../../images/thumbnails/image1-thumbnail.jpg";
 import thumb2 from "../../images/thumbnails/image2-thumbnail.jpg";
@@ -21,6 +25,10 @@ import thumb8 from "../../images/thumbnails/image8-thumbnail.jpg";
 import thumb9 from "../../images/thumbnails/image9-thumbnail.jpg";
 import thumb10 from "../../images/thumbnails/image10-thumbnail.jpg";
 import thumb11 from "../../images/thumbnails/image11-thumbnail.jpg";
+import thumb12 from "../../images/thumbnails/image12-thumbnail.jpg";
+import thumb13 from "../../images/thumbnails/image13-thumbnail.jpg";
+import thumb14 from "../../images/thumbnails/image14-thumbnail.jpg";
+import thumb15 from "../../images/thumbnails/image15-thumbnail.jpg";
 
 export const imageSliderData = [
 	{ image: image1, thumbnail: thumb1, caption: "Catching rays" },
@@ -34,4 +42,8 @@ export const imageSliderData = [
 	{ image: image9, thumbnail: thumb9, caption: "Bouldering" },
 	{ image: image10, thumbnail: thumb10, caption: "The Algarve" },
 	{ image: image11, thumbnail: thumb11, caption: "Koh Tao" },
+	{ image: image12, thumbnail: thumb12, caption: "Hungry" },
+	{ image: image13, thumbnail: thumb13, caption: "Pottery" },
+	{ image: image14, thumbnail: thumb14, caption: "Doodling" },
+	{ image: image15, thumbnail: thumb15, caption: "Cappadocia" },
 ];
