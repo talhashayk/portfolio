@@ -172,4 +172,104 @@ export const projectData = [
 		],
 		role: "Graduate Software Engineer, The Hut Group",
 	},
+	{
+		title: "Marketplace Management System",
+		description:
+			"Lead frontend development for MMS, an internal platform used to manage marketplaces, products, orders and operational workflows. Built React/TypeScript features using React Query and reusable component libraries, supporting authenticated flows across marketplace, product and order management. Coordinated with backend engineers, UX and Product to define API contracts and streamline delivery.",
+		skills: [
+			"React",
+			"TypeScript",
+			"React Query",
+			"Frontend Architecture",
+			"API Contract Design",
+			"Node.js",
+			"Backend Development",
+			"Authentication",
+			"Team Leadership",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Preloved Rebrand & Modernisation",
+		description:
+			"Led the rebrand and rebuild of Preloved's main traffic-facing pages, delivering frontend and backend integration work to modernise the user experience, improve performance, and increase maintainability. The project helped reverse declining traffic trends and reduced technical debt by replacing legacy implementations.",
+		skills: [
+			"React",
+			"Performance Optimisation",
+			"UX Collaboration",
+			"Backend Integrations",
+			"Codebase Modernization",
+			"Frontend Development",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Custom AI Agent Framework",
+		description:
+			"Appointed AI Champion and developed a custom AI agent framework supporting high-level and repository-level agents. Implemented self-correcting workflows and internal tooling to reduce manual iteration, improve code quality and accelerate development cycles.",
+		skills: [
+			"AI Tooling",
+			"Custom Agents",
+			"Developer Productivity",
+			"Automation",
+			"Repository Management",
+			"CI/CD",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Preloved Platform Ownership",
+		description:
+			"Served as sole maintainer for the Preloved estate in maintenance mode — primary responder for incidents, vulnerability remediation, patching, and long-term fixes. Focused on root-cause resolution to reduce recurring support overhead and improve platform stability.",
+		skills: [
+			"Incident Response",
+			"Vulnerability Management",
+			"Patching",
+			"On-call Support",
+			"Dependency Management",
+			"Monitoring",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Active-Passive Failover Automation",
+		description:
+			"Automated the failover process for an active-passive application setup, reducing manual operational effort and improving incident response speed by codifying failover steps and checks.",
+		skills: [
+			"Automation",
+			"High-Availability",
+			"Runbooks",
+			"Infrastructure",
+			"CI/CD Compatibility",
+			"Scripting",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Ezoic & Humix Integrations",
+		description:
+			"Implemented Ezoic integrations (initial proxy via CNAME, later JavaScript-based) and integrated Humix video functionality to support additional content and monetisation. Adapted frontend implementations to support ad displays and assessed performance impact.",
+		skills: [
+			"Ad Integration",
+			"Ezoic",
+			"Frontend Adaptation",
+			"Performance Testing",
+			"Display Ad Optimization",
+			"Revenue Maximization",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
+	{
+		title: "Vulnerability & Security Management",
+		description:
+			"Managed vulnerability remediation across legacy and modern services, handling patching, dependency updates and long-term fixes to reduce security risk across the estate.",
+		skills: [
+			"Security Maintenance",
+			"Dependency Management",
+			"Patch Management",
+			"Repository Security",
+			"Vulnerability Remediation",
+		],
+		role: "Software Engineer, The Hut Group",
+	},
 ];

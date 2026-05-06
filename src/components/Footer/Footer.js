@@ -35,7 +35,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 						/>
 						Blackburn, UK
 					</a>
-					<a href="mailto:talha@example.com">
+					<a href="mailto:talhashake@gmail.com">
 						<img
 							src={mailIcon}
 							alt={"Mail"}
@@ -112,7 +112,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
 					</p>
 				</div>
 				<div>
-					<p className="footer-tagline">2025 Talha Sheikh.</p>
+					<p className="footer-tagline">2026 Talha Sheikh.</p>
 					<p className="footer-tagline">
 						Crafting solutions with code and creativity.
 					</p>

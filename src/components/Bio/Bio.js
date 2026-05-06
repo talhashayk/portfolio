@@ -7,7 +7,7 @@ const Bio = () => {
 	return (
 		<div className="bio-group">
 			<p className="bio-text">
-				I'm a Software Engineer with over 3 years of experience
+				I'm a Software Engineer with over 4 years of experience
 				designing, building, and maintaining solid platforms.
 			</p>
 			<p className="bio-text">

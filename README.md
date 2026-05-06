@@ -1,3 +1,12 @@
+# Talha Sheikh — Full-Stack Software Engineer
+
+Location: Blackburn, United Kingdom  
+Email: talhashake@gmail.com  
+LinkedIn: https://linkedin.com/in/talhasheikhswe  
+GitHub / Portfolio: https://github.com/talhashayk | https://talhashayk.github.io/portfolio
+
+Professional summary: Software Engineer with 4+ years of experience building full-stack applications with a strong focus on React, backend APIs, and product delivery. Skilled in modernising legacy systems, AI-assisted tooling, and production maintenance.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
